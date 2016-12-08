@@ -24,6 +24,7 @@ HRESULT CEx05_02Billboard::Create(LPDIRECT3DDEVICE9 pdev)
 {
 	CBaseClass::Create(pdev);
 
+	//오브젝트 생성
 	m_pWater = new CEx05_02Water();
 	m_pWater->Create(pdev, 64, 64, 100);
 
@@ -34,6 +35,11 @@ HRESULT CEx05_02Billboard::Create(LPDIRECT3DDEVICE9 pdev)
 	D3DXCreateTextureFromFile(m_pdev, L"Ex05_02/tree02S.dds", &m_pTexBillboard[1]);
 	D3DXCreateTextureFromFile(m_pdev, L"Ex05_02/tree35S.dds", &m_pTexBillboard[2]);
 	D3DXCreateTextureFromFile(m_pdev, L"Ex05_02/tex.jpg", &m_pTexBillboard[3]);
+
+	//최초의 마우스 위치 보관
+	POINT pt;
+	GetCursorPos(&pt);
+	m_dwMousePos[0] = pt.x; m_dwMousePos[1] = pt.y;
 
 	return S_OK;
 }
@@ -74,16 +80,10 @@ void CEx05_02Billboard::Render()
 		m_pdev->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
 		m_pdev->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
 		m_pdev->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+
 		m_pdev->SetRenderState(D3DRS_ALPHATESTENABLE, TRUE);
 		m_pdev->SetRenderState(D3DRS_ALPHAREF, 0x08);
 		m_pdev->SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATEREQUAL);
-
-		struct MYVERTEX
-		{
-			enum { FVF = D3DFVF_XYZ | D3DFVF_TEX1 };
-			float px, py, pz;
-			float tu, tv;
-		};
 
 		//빌보드 관련
 		Vertex vtx[4] =
@@ -113,10 +113,11 @@ void CEx05_02Billboard::Render()
 			// Y축 회전행렬은 _11, _13, _31, _33번 행렬에 회전값이 들어간다
 			// 카메라의 Y축 회전행렬값을 읽어서 역행렬을 만들면 X,Z축이 고정된
 			// Y축 회전 빌보드 행렬을 만들수 있다
-			mtBillboard._11 = g_pGame->m_matView._11;//m_pCam->GetViewMatrix()->_11;
-			mtBillboard._13 = g_pGame->m_matView._13;//m_pCam->GetViewMatrix()->_13;
-			mtBillboard._31 = g_pGame->m_matView._31;//m_pCam->GetViewMatrix()->_31;
-			mtBillboard._33 = g_pGame->m_matView._33;//m_pCam->GetViewMatrix()->_33;
+			mtBillboard._11 = m_pCam->GetViewMatrix()->_11;
+			mtBillboard._13 = m_pCam->GetViewMatrix()->_13;
+			mtBillboard._31 = m_pCam->GetViewMatrix()->_31;
+			mtBillboard._33 = m_pCam->GetViewMatrix()->_33;
+			//memcpy(&mtBillboard, m_pCam->GetViewMatrix(), sizeof(mtBillboard));
 			D3DXMatrixInverse(&mtBillboard, NULL, &mtBillboard);
 		}
 
@@ -142,7 +143,44 @@ void CEx05_02Billboard::Render()
 
 void CEx05_02Billboard::Update()
 {
+	if (m_pdev)
+	{
+		/**-----------------------------------------------------------------------------
+		* 마우스 입력처리
+		*------------------------------------------------------------------------------
+		*/
+		POINT pt;
+		float fDelta = 0.001f;
 
+		GetCursorPos(&pt);
+		int dx = pt.x - m_dwMousePos[0];
+		int dy = pt.y - m_dwMousePos[1];
+
+		m_pCam->RotateLocalX(dy * fDelta);	// 마우스의 Y축 회전값은 3D world의  X축 회전값
+		m_pCam->RotateLocalY(dx * fDelta);	// 마우스의 X축 회전값은 3D world의  Y축 회전값
+
+		// 마우스를 윈도우의 중앙으로 초기화
+		//	SetCursor( NULL );	// 마우스를 나타나지 않게 않다.
+		RECT	rc;
+
+		GetClientRect(g_pGame->GetHWND(), &rc);
+		pt.x = (rc.right - rc.left) / 2;
+		pt.y = (rc.bottom - rc.top) / 2;
+		ClientToScreen(g_pGame->GetHWND(), &pt);
+		SetCursorPos(pt.x, pt.y);
+		m_dwMousePos[0] = pt.x;
+		m_dwMousePos[1] = pt.y;
+
+		/**-----------------------------------------------------------------------------
+		* 키보드 입력 처리
+		*------------------------------------------------------------------------------
+		*/
+		if (GetAsyncKeyState('A')) m_pCam->MoveLocalZ(0.5f);
+		if (GetAsyncKeyState('Z')) m_pCam->MoveLocalZ(-0.5f);
+
+		D3DXMATRIXA16*	pMatView = m_pCam->GetViewMatrix();		// 카메라 행렬을 얻는다.
+		m_pdev->SetTransform(D3DTS_VIEW, pMatView);
+	}
 }
 
 CEx05_02Water::CEx05_02Water()

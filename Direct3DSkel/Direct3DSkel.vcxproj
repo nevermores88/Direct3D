@@ -87,6 +87,7 @@
     <ClInclude Include="Direct3DSkel.h" />
     <ClInclude Include="Ex05_01LightMapping.h" />
     <ClInclude Include="Ex05_02Billboard.h" />
+    <ClInclude Include="Ex05_03Billboard.h" />
     <ClInclude Include="Ex05_04NormalMapping.h" />
     <ClInclude Include="Ex06_Textures.h" />
     <ClInclude Include="Ex07_Mesh.h" />
@@ -103,6 +104,7 @@
     <ClCompile Include="Direct3DSkel.cpp" />
     <ClCompile Include="Ex05_01LightMapping.cpp" />
     <ClCompile Include="Ex05_02Billboard.cpp" />
+    <ClCompile Include="Ex05_03Billboard.cpp" />
     <ClCompile Include="Ex05_04NormalMapping.cpp" />
     <ClCompile Include="Ex06_Textures.cpp" />
     <ClCompile Include="Ex07_Mesh.cpp" />

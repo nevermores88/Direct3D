@@ -60,6 +60,9 @@
     <ClInclude Include="GameCore.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Ex05_03Billboard.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -96,6 +99,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="GameCore.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex05_03Billboard.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

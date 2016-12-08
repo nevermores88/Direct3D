@@ -7,6 +7,7 @@
 
 #include "Ex05_01LightMapping.h"
 #include "Ex05_02Billboard.h"
+#include "Ex05_03Billboard.h"
 #include "Ex05_04NormalMapping.h"
 
 CGameApp* CGameApp::m_pGameApp = NULL;
@@ -25,7 +26,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	pGameInstance = new CEx05_04NormalMapping();
+	pGameInstance = new CEx05_03Billboard();
 	pGameInstance->Create(m_pdev);
 
 	return ret;

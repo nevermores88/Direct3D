@@ -37,6 +37,8 @@ class CEx05_02Billboard : public CBaseClass
 	BOOL m_bBillboard;
 	BOOL	 m_bWireframe;
 
+	DWORD m_dwMousePos[2];
+
 public:
 	CEx05_02Billboard();
 	~CEx05_02Billboard();

@@ -11,16 +11,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{37054766-BFFE-4EC3-9930-B5F2BC009012}</ProjectGuid>
+    <ProjectGuid>{CA369B91-BB82-44A5-9D1A-C15094464F13}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Direct3DSkel</RootNamespace>
+    <RootNamespace>ShaderBeginning</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -52,7 +52,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -83,50 +83,40 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseClass.h" />
-    <ClInclude Include="d3dUtility.h" />
-    <ClInclude Include="Direct3DSkel.h" />
-    <ClInclude Include="Ex05_01LightMapping.h" />
-    <ClInclude Include="Ex05_02Billboard.h" />
-    <ClInclude Include="Ex05_03Billboard.h" />
-    <ClInclude Include="Ex05_04NormalMapping.h" />
-    <ClInclude Include="Ex05_05Hierachy.h" />
-    <ClInclude Include="Ex05_06Animation.h" />
-    <ClInclude Include="Ex05_07Skinning.h" />
-    <ClInclude Include="Ex06_Textures.h" />
-    <ClInclude Include="Ex07_Mesh.h" />
-    <ClInclude Include="Ex08_IndexBuffer.h" />
+    <ClInclude Include="Ex02_RedShader.h" />
+    <ClInclude Include="Ex03_TextureMapping.h" />
+    <ClInclude Include="Ex04_LightingShader.h" />
+    <ClInclude Include="Ex05_DiffuseShader.h" />
+    <ClInclude Include="Ex06_ToonShader.h" />
+    <ClInclude Include="Ex07_NormalMapping.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameCore.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="ShaderBeginning.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseClass.cpp" />
-    <ClCompile Include="d3dUtility.cpp" />
-    <ClCompile Include="Direct3DSkel.cpp" />
-    <ClCompile Include="Ex05_01LightMapping.cpp" />
-    <ClCompile Include="Ex05_02Billboard.cpp" />
-    <ClCompile Include="Ex05_03Billboard.cpp" />
-    <ClCompile Include="Ex05_04NormalMapping.cpp" />
-    <ClCompile Include="Ex05_05Hierachy.cpp" />
-    <ClCompile Include="Ex05_06Animation.cpp" />
-    <ClCompile Include="Ex05_07Skinning.cpp" />
-    <ClCompile Include="Ex06_Textures.cpp" />
-    <ClCompile Include="Ex07_Mesh.cpp" />
-    <ClCompile Include="Ex08_IndexBuffer.cpp" />
+    <ClCompile Include="Ex02_RedShader.cpp" />
+    <ClCompile Include="Ex03_TextureMapping.cpp" />
+    <ClCompile Include="Ex04_LightingShader.cpp" />
+    <ClCompile Include="Ex05_DiffuseShader.cpp" />
+    <ClCompile Include="Ex06_ToonShader.cpp" />
+    <ClCompile Include="Ex07_NormalMapping.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="GameCore.cpp" />
+    <ClCompile Include="ShaderBeginning.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Direct3DSkel.rc" />
+    <ResourceCompile Include="ShaderBeginning.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Direct3DSkel.ico" />
+    <Image Include="ShaderBeginning.ico" />
     <Image Include="small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

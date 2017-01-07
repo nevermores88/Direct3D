@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{37054766-BFFE-4EC3-9930-B5F2BC009012}</ProjectGuid>
+    <ProjectGuid>{1B016A33-CCB6-4D30-8D43-1D3C9A23ED0D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Direct3DSkel</RootNamespace>
+    <RootNamespace>My3DAPIBasic</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -41,8 +41,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Program Files %28x86%29\Microsoft DirectX SDK %28February 2010%29\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Program Files %28x86%29\Microsoft DirectX SDK %28February 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -58,7 +56,6 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d3d9.lib;d3dx9.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -82,51 +79,23 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseClass.h" />
-    <ClInclude Include="d3dUtility.h" />
-    <ClInclude Include="Direct3DSkel.h" />
-    <ClInclude Include="Ex05_01LightMapping.h" />
-    <ClInclude Include="Ex05_02Billboard.h" />
-    <ClInclude Include="Ex05_03Billboard.h" />
-    <ClInclude Include="Ex05_04NormalMapping.h" />
-    <ClInclude Include="Ex05_05Hierachy.h" />
-    <ClInclude Include="Ex05_06Animation.h" />
-    <ClInclude Include="Ex05_07Skinning.h" />
-    <ClInclude Include="Ex06_Textures.h" />
-    <ClInclude Include="Ex07_Mesh.h" />
-    <ClInclude Include="Ex08_IndexBuffer.h" />
-    <ClInclude Include="GameApp.h" />
-    <ClInclude Include="GameCore.h" />
+    <ClInclude Include="3DAPIBasic.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BaseClass.cpp" />
-    <ClCompile Include="d3dUtility.cpp" />
-    <ClCompile Include="Direct3DSkel.cpp" />
-    <ClCompile Include="Ex05_01LightMapping.cpp" />
-    <ClCompile Include="Ex05_02Billboard.cpp" />
-    <ClCompile Include="Ex05_03Billboard.cpp" />
-    <ClCompile Include="Ex05_04NormalMapping.cpp" />
-    <ClCompile Include="Ex05_05Hierachy.cpp" />
-    <ClCompile Include="Ex05_06Animation.cpp" />
-    <ClCompile Include="Ex05_07Skinning.cpp" />
-    <ClCompile Include="Ex06_Textures.cpp" />
-    <ClCompile Include="Ex07_Mesh.cpp" />
-    <ClCompile Include="Ex08_IndexBuffer.cpp" />
-    <ClCompile Include="GameApp.cpp" />
-    <ClCompile Include="GameCore.cpp" />
+    <ClCompile Include="3DAPIBasic.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Direct3DSkel.rc" />
+    <ResourceCompile Include="3DAPIBasic.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Direct3DSkel.ico" />
+    <Image Include="3DAPIBasic.ico" />
     <Image Include="small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

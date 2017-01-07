@@ -10,3 +10,8 @@ DWORD d3d::VectortoRGBA(D3DXVECTOR3* v, FLOAT fHeight)
 
 	return((a << 24L) + (r << 16L) + (g << 8L) + (b << 0L));
 };
+
+float d3d::Linear(float v0, float v1, float t)
+{
+	return v0*(1.0f - t) + v1*t;
+}

@@ -11,16 +11,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{37054766-BFFE-4EC3-9930-B5F2BC009012}</ProjectGuid>
+    <ProjectGuid>{B46947AE-8198-4DFC-8BB3-021132ACE644}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Direct3DSkel</RootNamespace>
+    <RootNamespace>My3DAPIShader</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -52,7 +52,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -82,51 +82,45 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="3DAPIShader.h" />
     <ClInclude Include="BaseClass.h" />
-    <ClInclude Include="d3dUtility.h" />
-    <ClInclude Include="Direct3DSkel.h" />
-    <ClInclude Include="Ex05_01LightMapping.h" />
-    <ClInclude Include="Ex05_02Billboard.h" />
-    <ClInclude Include="Ex05_03Billboard.h" />
-    <ClInclude Include="Ex05_04NormalMapping.h" />
-    <ClInclude Include="Ex05_05Hierachy.h" />
-    <ClInclude Include="Ex05_06Animation.h" />
-    <ClInclude Include="Ex05_07Skinning.h" />
-    <ClInclude Include="Ex06_Textures.h" />
-    <ClInclude Include="Ex07_Mesh.h" />
-    <ClInclude Include="Ex08_IndexBuffer.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameCore.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Shader_3dapi_03_01.h" />
+    <ClInclude Include="Shader_3dapi_03_02.h" />
+    <ClInclude Include="Shader_3dapi_03_03.h" />
+    <ClInclude Include="Shader_3dapi_03_04.h" />
+    <ClInclude Include="Shader_3dapi_03_08.h" />
+    <ClInclude Include="Shader_3dapi_03_09.h" />
+    <ClInclude Include="Shader_3dapi_03_10.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TestShader.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="3DAPIShader.cpp" />
     <ClCompile Include="BaseClass.cpp" />
-    <ClCompile Include="d3dUtility.cpp" />
-    <ClCompile Include="Direct3DSkel.cpp" />
-    <ClCompile Include="Ex05_01LightMapping.cpp" />
-    <ClCompile Include="Ex05_02Billboard.cpp" />
-    <ClCompile Include="Ex05_03Billboard.cpp" />
-    <ClCompile Include="Ex05_04NormalMapping.cpp" />
-    <ClCompile Include="Ex05_05Hierachy.cpp" />
-    <ClCompile Include="Ex05_06Animation.cpp" />
-    <ClCompile Include="Ex05_07Skinning.cpp" />
-    <ClCompile Include="Ex06_Textures.cpp" />
-    <ClCompile Include="Ex07_Mesh.cpp" />
-    <ClCompile Include="Ex08_IndexBuffer.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="GameCore.cpp" />
+    <ClCompile Include="Shader_3dapi_03_01.cpp" />
+    <ClCompile Include="Shader_3dapi_03_02.cpp" />
+    <ClCompile Include="Shader_3dapi_03_03.cpp" />
+    <ClCompile Include="Shader_3dapi_03_04.cpp" />
+    <ClCompile Include="Shader_3dapi_03_08.cpp" />
+    <ClCompile Include="Shader_3dapi_03_09.cpp" />
+    <ClCompile Include="Shader_3dapi_03_10.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TestShader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Direct3DSkel.rc" />
+    <ResourceCompile Include="3DAPIShader.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Direct3DSkel.ico" />
+    <Image Include="3DAPIShader.ico" />
     <Image Include="small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

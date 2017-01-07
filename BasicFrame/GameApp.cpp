@@ -1,18 +1,6 @@
 #include "stdafx.h"
 #include "GameApp.h"
 
-#include "Ex06_Textures.h"
-#include "Ex07_Mesh.h"
-#include "Ex08_IndexBuffer.h"
-
-#include "Ex05_01LightMapping.h"
-#include "Ex05_02Billboard.h"
-#include "Ex05_03Billboard.h"
-#include "Ex05_04NormalMapping.h"
-#include "Ex05_05Hierachy.h"
-#include "Ex05_06Animation.h"
-#include "Ex05_07Skinning.h"
-
 CGameApp* CGameApp::m_pGameApp = NULL;
 
 CGameApp::CGameApp()
@@ -29,8 +17,10 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	pGameInstance = new CEx05_05Hierachy();
-	pGameInstance->Create(m_pdev);
+	pGameInstance = NULL;
+	//pGameInstance = new CEx05_07Skinning();
+	if ( pGameInstance)
+		pGameInstance->Create(m_pdev);
 
 	return ret;
 }
@@ -73,11 +63,6 @@ void CGameApp::Render()
 
 void CGameApp::Update()
 {
-	/*if (GetAsyncKeyState('Q')) 
-		m_pdev->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
-	if (GetAsyncKeyState('E')) 
-		m_pdev->SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);*/
-
 	if (pGameInstance)
 		pGameInstance->Update();
 }
@@ -87,7 +72,7 @@ void CGameApp::SetCamera()
 	if (m_pdev)
 	{
 		RECT rect;
-		
+
 		GetClientRect(m_hWnd, &rect);
 
 		m_VP.X = 0;
@@ -99,7 +84,7 @@ void CGameApp::SetCamera()
 
 		m_Eye.x = 0.0f;
 		m_Eye.y = 0.0f;
-		m_Eye.z = 500.0f;
+		m_Eye.z = -3.0f;
 
 		m_At.x = 0.0f;
 		m_At.y = 0.0f;

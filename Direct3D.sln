@@ -5,6 +5,14 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Direct3DSkel", "Direct3DSkel\Direct3DSkel.vcxproj", "{37054766-BFFE-4EC3-9930-B5F2BC009012}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShaderBeginning", "ShaderBeginning\ShaderBeginning.vcxproj", "{CA369B91-BB82-44A5-9D1A-C15094464F13}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BasicFrame", "BasicFrame\BasicFrame.vcxproj", "{565A3F11-E814-478C-84BC-6C852891F770}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3DAPIShader", "3DAPIShader\3DAPIShader.vcxproj", "{B46947AE-8198-4DFC-8BB3-021132ACE644}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3DAPIBasic", "3DAPIBasic\3DAPIBasic.vcxproj", "{1B016A33-CCB6-4D30-8D43-1D3C9A23ED0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +23,22 @@ Global
 		{37054766-BFFE-4EC3-9930-B5F2BC009012}.Debug|Win32.Build.0 = Debug|Win32
 		{37054766-BFFE-4EC3-9930-B5F2BC009012}.Release|Win32.ActiveCfg = Release|Win32
 		{37054766-BFFE-4EC3-9930-B5F2BC009012}.Release|Win32.Build.0 = Release|Win32
+		{CA369B91-BB82-44A5-9D1A-C15094464F13}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CA369B91-BB82-44A5-9D1A-C15094464F13}.Debug|Win32.Build.0 = Debug|Win32
+		{CA369B91-BB82-44A5-9D1A-C15094464F13}.Release|Win32.ActiveCfg = Release|Win32
+		{CA369B91-BB82-44A5-9D1A-C15094464F13}.Release|Win32.Build.0 = Release|Win32
+		{565A3F11-E814-478C-84BC-6C852891F770}.Debug|Win32.ActiveCfg = Debug|Win32
+		{565A3F11-E814-478C-84BC-6C852891F770}.Debug|Win32.Build.0 = Debug|Win32
+		{565A3F11-E814-478C-84BC-6C852891F770}.Release|Win32.ActiveCfg = Release|Win32
+		{565A3F11-E814-478C-84BC-6C852891F770}.Release|Win32.Build.0 = Release|Win32
+		{B46947AE-8198-4DFC-8BB3-021132ACE644}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B46947AE-8198-4DFC-8BB3-021132ACE644}.Debug|Win32.Build.0 = Debug|Win32
+		{B46947AE-8198-4DFC-8BB3-021132ACE644}.Release|Win32.ActiveCfg = Release|Win32
+		{B46947AE-8198-4DFC-8BB3-021132ACE644}.Release|Win32.Build.0 = Release|Win32
+		{1B016A33-CCB6-4D30-8D43-1D3C9A23ED0D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1B016A33-CCB6-4D30-8D43-1D3C9A23ED0D}.Debug|Win32.Build.0 = Debug|Win32
+		{1B016A33-CCB6-4D30-8D43-1D3C9A23ED0D}.Release|Win32.ActiveCfg = Release|Win32
+		{1B016A33-CCB6-4D30-8D43-1D3C9A23ED0D}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

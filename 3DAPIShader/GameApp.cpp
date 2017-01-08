@@ -8,6 +8,7 @@
 #include "Shader_3dapi_03_08.h"
 #include "Shader_3dapi_03_09.h"
 #include "Shader_3dapi_03_10.h"
+#include "Shader_3dapi_03_11.h"
 #include "TestShader.h"
 
 CGameApp* CGameApp::m_pGameApp = NULL;
@@ -26,10 +27,19 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	pGameInstance = new CShader_3dapi_03_10();
+	m_pGameInstance = new CShader_3dapi_03_11();
 
-	if ( pGameInstance)
-		pGameInstance->Create(m_pdev);
+	if (m_pGameInstance)
+		m_pGameInstance->Create(m_pdev);
+
+	m_pInputManager = g_pInput;
+	m_pInputManager->Create(hWnd);
+
+	m_pCameraManager = g_pCamera;
+	m_pCameraManager->Create(m_pdev);
+
+	m_pGrid = new CGrid();
+	m_pGrid->Create(m_pdev);
 
 	return ret;
 }
@@ -38,17 +48,35 @@ void CGameApp::Release()
 {
 	CGameCore::Release();
 
-	if (pGameInstance)
+	if (m_pGameInstance)
 	{
-		pGameInstance->Release();
-		delete pGameInstance;
-		pGameInstance = NULL;
+		m_pGameInstance->Release();
+		delete m_pGameInstance;
+		m_pGameInstance = NULL;
 	}
 
 	if (!m_pGameApp)
 	{
 		delete m_pGameApp;
 		m_pGameApp = NULL;
+	}
+
+	if (m_pInputManager)
+	{
+		m_pInputManager->Release();
+		m_pInputManager = NULL;
+	}
+
+	if (m_pCameraManager)
+	{
+		m_pCameraManager->Release();
+		m_pCameraManager = NULL;
+	}
+
+	if (m_pGrid)
+	{
+		delete m_pGrid;
+		m_pGrid = NULL;
 	}
 }
 
@@ -61,8 +89,14 @@ void CGameApp::Render()
 
 	if (SUCCEEDED(m_pdev->BeginScene()))
 	{
-		if (pGameInstance)
-			pGameInstance->Render();
+		if (m_pCameraManager)
+			m_pCameraManager->SetTransfrom();
+
+		if (m_pGrid)
+			m_pGrid->Render();
+
+		if (m_pGameInstance)
+			m_pGameInstance->Render();
 
 		m_pdev->EndScene();
 	}
@@ -72,8 +106,44 @@ void CGameApp::Render()
 
 void CGameApp::Update()
 {
-	if (pGameInstance)
-		pGameInstance->Update();
+	if (m_pInputManager)
+	{
+		m_pInputManager->Update();
+
+		D3DXVECTOR3 vEps = m_pInputManager->GetMouseEps();
+
+		if (m_pCameraManager)
+		{
+			if (vEps.z != 0.0f)
+				m_pCameraManager->MoveForward(vEps.z*1.0f, 1.0f);
+
+			if (m_pInputManager->KeyState('W'))
+				m_pCameraManager->MoveForward(4.0f, 1.0f);
+
+			if (m_pInputManager->KeyState('S'))
+				m_pCameraManager->MoveForward(-4.0f, 1.0f);
+
+			if (m_pInputManager->KeyState('A'))
+				m_pCameraManager->MoveSide(-4.0f);
+
+			if (m_pInputManager->KeyState('D'))
+				m_pCameraManager->MoveSide(4.0f);
+
+			if (m_pInputManager->BtnPress(1))
+			{
+				D3DXVECTOR3 vDelta = m_pInputManager->GetMouseEps();
+				m_pCameraManager->Rotation(vDelta);
+			}
+
+			m_pCameraManager->Update();
+		}
+	}
+
+	if (m_pGrid)
+		m_pGrid->Update();
+
+	if (m_pGameInstance)
+		m_pGameInstance->Update();
 }
 
 void CGameApp::SetCamera()
@@ -93,7 +163,7 @@ void CGameApp::SetCamera()
 
 		m_Eye.x = 0.0f;
 		m_Eye.y = 30.0f;
-		m_Eye.z = 800.0f;
+		m_Eye.z = -200.0f;
 
 		m_At.x = 0.0f;
 		m_At.y = 0.0f;

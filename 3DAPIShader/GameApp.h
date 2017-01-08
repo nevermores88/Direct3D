@@ -1,13 +1,22 @@
 #pragma once
 #include "GameCore.h"
 
+#include "InputManager.h"
+#include "CameraManager.h"
+
+#include "Grid.h"
+
 #define g_pGame CGameApp::GetInstance()
 
 class CGameApp : public CGameCore
 {
 	static CGameApp* m_pGameApp;
 
-	CBaseClass*	 pGameInstance;
+	CBaseClass*	 m_pGameInstance;
+	CInputManager*	m_pInputManager;
+	CCameraManager* m_pCameraManager;
+
+	CGrid* m_pGrid;
 
 public:
 	D3DXMATRIX m_matView;

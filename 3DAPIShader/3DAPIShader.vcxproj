@@ -84,8 +84,13 @@
   <ItemGroup>
     <ClInclude Include="3DAPIShader.h" />
     <ClInclude Include="BaseClass.h" />
+    <ClInclude Include="CameraManager.h" />
+    <ClInclude Include="Field.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameCore.h" />
+    <ClInclude Include="Grid.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Shader_3dapi_03_01.h" />
     <ClInclude Include="Shader_3dapi_03_02.h" />
@@ -94,6 +99,7 @@
     <ClInclude Include="Shader_3dapi_03_08.h" />
     <ClInclude Include="Shader_3dapi_03_09.h" />
     <ClInclude Include="Shader_3dapi_03_10.h" />
+    <ClInclude Include="Shader_3dapi_03_11.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TestShader.h" />
@@ -101,8 +107,13 @@
   <ItemGroup>
     <ClCompile Include="3DAPIShader.cpp" />
     <ClCompile Include="BaseClass.cpp" />
+    <ClCompile Include="CameraManager.cpp" />
+    <ClCompile Include="Field.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="GameCore.cpp" />
+    <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Shader_3dapi_03_01.cpp" />
     <ClCompile Include="Shader_3dapi_03_02.cpp" />
     <ClCompile Include="Shader_3dapi_03_03.cpp" />
@@ -110,6 +121,7 @@
     <ClCompile Include="Shader_3dapi_03_08.cpp" />
     <ClCompile Include="Shader_3dapi_03_09.cpp" />
     <ClCompile Include="Shader_3dapi_03_10.cpp" />
+    <ClCompile Include="Shader_3dapi_03_11.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

@@ -4,6 +4,8 @@
 #include "stdafx.h"
 #include "3DAPIShader.h"
 
+#include "InputManager.h"
+
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
@@ -137,6 +139,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	PAINTSTRUCT ps;
 	HDC hdc;
 
+	g_pInput->MsgProc(hWnd, message, wParam, lParam);
+
 	switch (message)
 	{
 	case WM_COMMAND:
@@ -168,6 +172,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	default:
 		return DefWindowProc(hWnd, message, wParam, lParam);
 	}
+
 	return 0;
 }
 

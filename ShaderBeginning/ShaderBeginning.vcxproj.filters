@@ -57,6 +57,9 @@
     <ClInclude Include="Ex07_NormalMapping.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Ex08_EnvironmentMapping.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -90,6 +93,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Ex07_NormalMapping.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex08_EnvironmentMapping.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

@@ -7,6 +7,7 @@
 #include "Ex05_DiffuseShader.h"
 #include "Ex06_ToonShader.h"
 #include "Ex07_NormalMapping.h"
+#include "Ex08_EnvironmentMapping.h"
 
 CGameApp* CGameApp::m_pGameApp = NULL;
 
@@ -25,7 +26,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	SetCamera();
 
 	pGameInstance = NULL;
-	pGameInstance = new CEx07_NormalMapping();
+	pGameInstance = new CEx08_EnvironmentMapping();
 
 	if (pGameInstance)
 		pGameInstance->Create(m_pdev);

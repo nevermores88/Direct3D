@@ -89,6 +89,7 @@
     <ClInclude Include="Ex05_DiffuseShader.h" />
     <ClInclude Include="Ex06_ToonShader.h" />
     <ClInclude Include="Ex07_NormalMapping.h" />
+    <ClInclude Include="Ex08_EnvironmentMapping.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameCore.h" />
     <ClInclude Include="Resource.h" />
@@ -104,6 +105,7 @@
     <ClCompile Include="Ex05_DiffuseShader.cpp" />
     <ClCompile Include="Ex06_ToonShader.cpp" />
     <ClCompile Include="Ex07_NormalMapping.cpp" />
+    <ClCompile Include="Ex08_EnvironmentMapping.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="ShaderBeginning.cpp" />

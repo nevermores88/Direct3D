@@ -76,6 +76,31 @@ HRESULT CShader_3dapi_03_11::Create(LPDIRECT3DDEVICE9 pdev)
 		m_pTreeMatrices[i]._43 = z;
 	}
 
+	//·»´õ Å¸°Ù¿ë ÅØ½ºÃÄ »ý¼º
+	if (FAILED(LcD3D_CreateRenderTarget(NULL, &m_pRenderTarget, m_pdev)))
+		return E_FAIL;
+
+	//¼ÎÀÌ´õ
+	HWND hWnd;
+	D3DDEVICE_CREATION_PARAMETERS ppm;
+	m_pdev->GetCreationParameters(&ppm);
+	hWnd = ppm.hFocusWindow;
+
+	m_pVertex[0] = Vertex(-1.05F, -1.02F, 0, 0xffffffff, 0.f, 1.f);
+	m_pVertex[1] = Vertex(1.05F, -1.02F, 0, 0xffffffff, 1.f, 1.f);
+	m_pVertex[2] = Vertex(1.05F, 1.02F, 0, 0xffffffff, 1.f, 0.f);
+	m_pVertex[3] = Vertex(-1.05F, 1.02F, 0, 0xffffffff, 0.f, 0.f);
+
+	DWORD	dFVF = Vertex::FVF;
+	D3DVERTEXELEMENT9 vertex_decl[MAX_FVF_DECL_SIZE] = { 0 };
+	D3DXDeclaratorFromFVF(dFVF, vertex_decl);
+	if (FAILED(m_pdev->CreateVertexDeclaration(vertex_decl, &m_pFVF)))
+		return E_FAIL;
+
+	m_pShader = LoadShader("Ex03_11/Shader.fx");
+	if (!m_pShader)
+		return E_FAIL;
+
 	return S_OK;
 }
 
@@ -92,7 +117,115 @@ void CShader_3dapi_03_11::Render()
 {
 	if (m_pdev)
 	{
-		//m_pdev->SetRenderState(D3DRS_LIGHTING, TRUE);
+		m_pTex = (LPDIRECT3DTEXTURE9)m_pRenderTarget->GetTexture();
+		
+		static float fDeviation = 0.0f;
+		static float fDir = 1.0f;
+
+		fDeviation += fDir * 0.2f;
+
+		if (fDeviation > 5.f)
+			fDir *= -1.f;
+
+		if (fDeviation < 0.f)
+			fDir *= -1.f;
+
+	/*	m_pdev->SetVertexDeclaration(m_pFVF);
+		m_pdev->SetTexture(0, m_pTex);
+		m_pdev->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, m_pVertex, sizeof(Vertex));*/
+
+		m_pdev->SetVertexDeclaration(m_pFVF);
+
+		m_pShader->SetTechnique("Tech");
+		m_pShader->SetTexture("g_Tex", m_pTex);
+		m_pShader->SetValue("g_fDeviation", &fDeviation, 4);
+
+		UINT numPasses = 0;
+
+		m_pShader->Begin(&numPasses, NULL);
+
+		for (UINT i = 0; i < numPasses; ++i)
+		{
+			m_pShader->BeginPass(i);
+			{
+				m_pdev->DrawPrimitiveUP(D3DPT_TRIANGLEFAN, 2, m_pVertex, sizeof(Vertex));
+			}
+			m_pShader->EndPass();
+		}
+		m_pShader->End();
+
+		m_pdev->SetVertexDeclaration(NULL);
+		m_pdev->SetVertexShader(NULL);
+		m_pdev->SetPixelShader(NULL);
+	}
+}
+
+void CShader_3dapi_03_11::Update()
+{
+	if (m_pdev)
+	{
+		m_pRenderTarget->BeginScene();
+			this->RenderScene();
+		m_pRenderTarget->EndScene();
+	}
+}
+
+void CShader_3dapi_03_11::RenderScene()
+{
+	if (m_pdev)
+	{
+		D3DLIGHT9 d3Lght;
+		D3DXVECTOR3 vcLght(1, 1, 1);
+
+		vcLght = -vcLght;
+		D3DXVec3Normalize(&vcLght, &vcLght);
+
+		memset(&d3Lght, 0, sizeof d3Lght);
+		d3Lght.Type = D3DLIGHT_DIRECTIONAL;
+		d3Lght.Direction = vcLght;
+		d3Lght.Range = 15000;
+		d3Lght.Position = D3DXVECTOR3(100, 20, 300);
+		d3Lght.Diffuse = D3DXCOLOR(1, 1, 1, 1);
+
+		d3Lght.Theta = 0.3f;
+		d3Lght.Phi = 1.0f;
+		d3Lght.Falloff = 1.0f;
+		d3Lght.Attenuation0 = 1.0f;
+
+
+		D3DMATERIAL9	d3Mtl;
+		memset(&d3Mtl, 0, sizeof d3Mtl);
+
+		d3Mtl.Ambient = D3DXCOLOR(1, 1, 1, 1);
+		d3Mtl.Diffuse = D3DXCOLOR(1, 1, 1, 1);
+		d3Mtl.Specular = D3DXCOLOR(1, 1, 1, 1);
+		d3Mtl.Power = 10.f;
+
+		m_pdev->SetMaterial(&d3Mtl);
+
+		m_pdev->SetLight(0, &d3Lght);
+		m_pdev->LightEnable(0, TRUE);
+		m_pdev->SetRenderState(D3DRS_LIGHTING, TRUE);
+		m_pdev->SetRenderState(D3DRS_AMBIENT, 0xFF555555);
+
+		float	fFogBgn = 100.f;
+		float	fFogEnd = 1250.f;
+		D3DXCOLOR dFogColor(0.f, .3f, .5f, 1.f);
+
+		// Enable fog blending.
+		m_pdev->SetRenderState(D3DRS_FOGENABLE, TRUE);
+
+		// Set the fog color.
+		m_pdev->SetRenderState(D3DRS_FOGCOLOR, dFogColor);
+
+		m_pdev->SetRenderState(D3DRS_RANGEFOGENABLE, FALSE);
+
+		m_pdev->SetRenderState(D3DRS_FOGVERTEXMODE, D3DFOG_LINEAR);
+		m_pdev->SetRenderState(D3DRS_FOGSTART, *(DWORD *)(&fFogBgn));
+		m_pdev->SetRenderState(D3DRS_FOGEND, *(DWORD *)(&fFogEnd));
+
+		m_pdev->SetRenderState(D3DRS_LIGHTING, TRUE);
+
 		D3DXMATRIX mtIdentity;
 
 		m_pField->Render();
@@ -106,13 +239,5 @@ void CShader_3dapi_03_11::Render()
 		D3DXMatrixIdentity(&mtIdentity);
 		m_pdev->SetTransform(D3DTS_WORLD, &mtIdentity);
 		m_pdev->SetRenderState(D3DRS_FOGENABLE, FALSE);
-	}
-}
-
-void CShader_3dapi_03_11::Update()
-{
-	if (m_pdev)
-	{
-
 	}
 }

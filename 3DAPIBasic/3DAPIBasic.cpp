@@ -4,6 +4,8 @@
 #include "stdafx.h"
 #include "3DAPIBasic.h"
 
+#include "InputManager.h"
+
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
@@ -42,13 +44,19 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 
 	hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_MY3DAPIBASIC));
 
+	ZeroMemory(&msg, sizeof(msg));
 	// 기본 메시지 루프입니다.
-	while (GetMessage(&msg, NULL, 0, 0))
+	while (msg.message != WM_QUIT)
 	{
-		if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+		if (PeekMessage(&msg, NULL, 0U, 0U, PM_REMOVE))
 		{
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
+		}
+		else
+		{
+			g_pGame->Update();
+			g_pGame->Render();
 		}
 	}
 
@@ -107,6 +115,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
       return FALSE;
    }
 
+   g_pGame->Create(hWnd);
+
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
 
@@ -129,6 +139,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	PAINTSTRUCT ps;
 	HDC hdc;
 
+	g_pInput->MsgProc(hWnd, message, wParam, lParam);
+
 	switch (message)
 	{
 	case WM_COMMAND:
@@ -148,9 +160,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		}
 		break;
 	case WM_PAINT:
-		hdc = BeginPaint(hWnd, &ps);
+		//hdc = BeginPaint(hWnd, &ps);
 		// TODO: 여기에 그리기 코드를 추가합니다.
-		EndPaint(hWnd, &ps);
+		//EndPaint(hWnd, &ps);
+		g_pGame->Render();
+		ValidateRect(hWnd, NULL);
 		break;
 	case WM_DESTROY:
 		PostQuitMessage(0);

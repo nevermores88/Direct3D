@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Chapter07">
+      <UniqueIdentifier>{4bbdfddb-6a7c-46cc-a9db-b46de57919be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Chapter07">
+      <UniqueIdentifier>{34b6d33b-0a01-4330-9b59-cdea7926556c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Chapter08">
+      <UniqueIdentifier>{dcbd4a6c-398c-428a-af78-67f9d5ff86a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Chapter08">
+      <UniqueIdentifier>{07aebd78-af9c-4f2e-8c04-9bd97d7ed175}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -27,7 +39,43 @@
     <ClInclude Include="Resource.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="GameCore.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameApp.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic_3dapi_07_01.h">
+      <Filter>헤더 파일\Chapter07</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseClass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic_3dapi_07_02.h">
+      <Filter>헤더 파일\Chapter07</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic_3dapi_07_03.h">
+      <Filter>헤더 파일\Chapter07</Filter>
+    </ClInclude>
     <ClInclude Include="3DAPIBasic.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic_3dapi_07_04.h">
+      <Filter>헤더 파일\Chapter07</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic_3dapi_07_05.h">
+      <Filter>헤더 파일\Chapter07</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic_3dapi_07_06.h">
+      <Filter>헤더 파일\Chapter07</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic_3dapi_08_01.h">
+      <Filter>헤더 파일\Chapter08</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic_3dapi_08_02.h">
+      <Filter>헤더 파일\Chapter08</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic_3dapi_08_03.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -37,6 +85,42 @@
     </ClCompile>
     <ClCompile Include="3DAPIBasic.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCore.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameApp.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseClass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic_3dapi_07_01.cpp">
+      <Filter>소스 파일\Chapter07</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic_3dapi_07_02.cpp">
+      <Filter>소스 파일\Chapter07</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic_3dapi_07_03.cpp">
+      <Filter>소스 파일\Chapter07</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic_3dapi_07_04.cpp">
+      <Filter>소스 파일\Chapter07</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic_3dapi_07_05.cpp">
+      <Filter>소스 파일\Chapter07</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic_3dapi_07_06.cpp">
+      <Filter>소스 파일\Chapter07</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic_3dapi_08_01.cpp">
+      <Filter>소스 파일\Chapter08</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic_3dapi_08_02.cpp">
+      <Filter>소스 파일\Chapter08</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic_3dapi_08_03.cpp">
+      <Filter>소스 파일\Chapter08</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -20,7 +20,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -41,6 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\Program Files %28x86%29\Microsoft DirectX SDK %28February 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Program Files %28x86%29\Microsoft DirectX SDK %28February 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -50,12 +52,14 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\D3DUtility;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -80,12 +84,36 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3DAPIBasic.h" />
+    <ClInclude Include="BaseClass.h" />
+    <ClInclude Include="Basic_3dapi_07_01.h" />
+    <ClInclude Include="Basic_3dapi_07_02.h" />
+    <ClInclude Include="Basic_3dapi_07_03.h" />
+    <ClInclude Include="Basic_3dapi_07_04.h" />
+    <ClInclude Include="Basic_3dapi_07_05.h" />
+    <ClInclude Include="Basic_3dapi_07_06.h" />
+    <ClInclude Include="Basic_3dapi_08_01.h" />
+    <ClInclude Include="Basic_3dapi_08_02.h" />
+    <ClInclude Include="Basic_3dapi_08_03.h" />
+    <ClInclude Include="GameApp.h" />
+    <ClInclude Include="GameCore.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3DAPIBasic.cpp" />
+    <ClCompile Include="BaseClass.cpp" />
+    <ClCompile Include="Basic_3dapi_07_01.cpp" />
+    <ClCompile Include="Basic_3dapi_07_02.cpp" />
+    <ClCompile Include="Basic_3dapi_07_03.cpp" />
+    <ClCompile Include="Basic_3dapi_07_04.cpp" />
+    <ClCompile Include="Basic_3dapi_07_05.cpp" />
+    <ClCompile Include="Basic_3dapi_07_06.cpp" />
+    <ClCompile Include="Basic_3dapi_08_01.cpp" />
+    <ClCompile Include="Basic_3dapi_08_02.cpp" />
+    <ClCompile Include="Basic_3dapi_08_03.cpp" />
+    <ClCompile Include="GameApp.cpp" />
+    <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -97,6 +125,11 @@
   <ItemGroup>
     <Image Include="3DAPIBasic.ico" />
     <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\D3DUtility\D3DUtility.vcxproj">
+      <Project>{c85fe607-660e-41d1-b070-4d591ec1e355}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

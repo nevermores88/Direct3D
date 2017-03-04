@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3DAPIShader", "3DAPIShader\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3DAPIBasic", "3DAPIBasic\3DAPIBasic.vcxproj", "{1B016A33-CCB6-4D30-8D43-1D3C9A23ED0D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "D3DUtility", "D3DUtility\D3DUtility.vcxproj", "{C85FE607-660E-41D1-B070-4D591EC1E355}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -39,6 +41,10 @@ Global
 		{1B016A33-CCB6-4D30-8D43-1D3C9A23ED0D}.Debug|Win32.Build.0 = Debug|Win32
 		{1B016A33-CCB6-4D30-8D43-1D3C9A23ED0D}.Release|Win32.ActiveCfg = Release|Win32
 		{1B016A33-CCB6-4D30-8D43-1D3C9A23ED0D}.Release|Win32.Build.0 = Release|Win32
+		{C85FE607-660E-41D1-B070-4D591EC1E355}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C85FE607-660E-41D1-B070-4D591EC1E355}.Debug|Win32.Build.0 = Debug|Win32
+		{C85FE607-660E-41D1-B070-4D591EC1E355}.Release|Win32.ActiveCfg = Release|Win32
+		{C85FE607-660E-41D1-B070-4D591EC1E355}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

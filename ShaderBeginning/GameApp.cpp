@@ -8,6 +8,8 @@
 #include "Ex06_ToonShader.h"
 #include "Ex07_NormalMapping.h"
 #include "Ex08_EnvironmentMapping.h"
+#include "Ex09_UVAnimation.h"
+#include "Ex10_ShadowMapping.h"
 
 CGameApp* CGameApp::m_pGameApp = NULL;
 
@@ -26,10 +28,16 @@ HRESULT CGameApp::Create(HWND hWnd)
 	SetCamera();
 
 	pGameInstance = NULL;
-	pGameInstance = new CEx08_EnvironmentMapping();
+	pGameInstance = new CEx10_ShadowMapping();
 
 	if (pGameInstance)
 		pGameInstance->Create(m_pdev);
+
+	m_pInputManager = g_pInput;
+	m_pInputManager->Create(hWnd);
+
+	m_pCameraManager = g_pCamera;
+	m_pCameraManager->Create(m_pdev);
 
 	return ret;
 }
@@ -50,6 +58,18 @@ void CGameApp::Release()
 		delete m_pGameApp;
 		m_pGameApp = NULL;
 	}
+
+	if (m_pInputManager)
+	{
+		m_pInputManager->Release();
+		m_pInputManager = NULL;
+	}
+
+	if (m_pCameraManager)
+	{
+		m_pCameraManager->Release();
+		m_pCameraManager = NULL;
+	}
 }
 
 void CGameApp::Render()
@@ -61,6 +81,9 @@ void CGameApp::Render()
 
 	if (SUCCEEDED(m_pdev->BeginScene()))
 	{
+		if (m_pCameraManager)
+			m_pCameraManager->SetTransfrom();
+
 		if (pGameInstance)
 			pGameInstance->Render();
 
@@ -72,6 +95,39 @@ void CGameApp::Render()
 
 void CGameApp::Update()
 {
+	if (m_pInputManager)
+	{
+		m_pInputManager->Update();
+
+		D3DXVECTOR3 vEps = m_pInputManager->GetMouseEps();
+
+		if (m_pCameraManager)
+		{
+			if (vEps.z != 0.0f)
+				m_pCameraManager->MoveForward(vEps.z*1.0f, 1.0f);
+
+			if (m_pInputManager->KeyState('W'))
+				m_pCameraManager->MoveForward(4.0f, 1.0f);
+
+			if (m_pInputManager->KeyState('S'))
+				m_pCameraManager->MoveForward(-4.0f, 1.0f);
+
+			if (m_pInputManager->KeyState('A'))
+				m_pCameraManager->MoveSide(-4.0f);
+
+			if (m_pInputManager->KeyState('D'))
+				m_pCameraManager->MoveSide(4.0f);
+
+			if (m_pInputManager->BtnPress(1))
+			{
+				D3DXVECTOR3 vDelta = m_pInputManager->GetMouseEps();
+				m_pCameraManager->Rotation(vDelta);
+			}
+
+			m_pCameraManager->Update();
+		}
+	}
+
 	if (pGameInstance)
 		pGameInstance->Update();
 }
@@ -91,7 +147,7 @@ void CGameApp::SetCamera()
 		m_VP.MinZ = 0.0f;
 		m_VP.MaxZ = 1.0f;
 
-		m_Eye.x = 0.0f;
+		m_Eye.x = 100.0f;
 		m_Eye.y = 0.0f;
 		m_Eye.z = -150.0f;
 

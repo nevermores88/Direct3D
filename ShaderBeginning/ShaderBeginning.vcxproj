@@ -54,6 +54,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\D3DUtility;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -90,6 +91,8 @@
     <ClInclude Include="Ex06_ToonShader.h" />
     <ClInclude Include="Ex07_NormalMapping.h" />
     <ClInclude Include="Ex08_EnvironmentMapping.h" />
+    <ClInclude Include="Ex09_UVAnimation.h" />
+    <ClInclude Include="Ex10_ShadowMapping.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameCore.h" />
     <ClInclude Include="Resource.h" />
@@ -106,6 +109,8 @@
     <ClCompile Include="Ex06_ToonShader.cpp" />
     <ClCompile Include="Ex07_NormalMapping.cpp" />
     <ClCompile Include="Ex08_EnvironmentMapping.cpp" />
+    <ClCompile Include="Ex09_UVAnimation.cpp" />
+    <ClCompile Include="Ex10_ShadowMapping.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="ShaderBeginning.cpp" />
@@ -120,6 +125,11 @@
   <ItemGroup>
     <Image Include="ShaderBeginning.ico" />
     <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\D3DUtility\D3DUtility.vcxproj">
+      <Project>{c85fe607-660e-41d1-b070-4d591ec1e355}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -26,3 +26,4 @@
 
 #include "BaseClass.h"
 #include "GameApp.h"
+#include "D3DUtility.h"

@@ -1,6 +1,9 @@
 #pragma once
 #include "GameCore.h"
 
+#include "../D3DUtility/InputManager.h"
+#include "../D3DUtility/CameraManager.h"
+
 #define g_pGame CGameApp::GetInstance()
 
 class CGameApp : public CGameCore
@@ -8,6 +11,9 @@ class CGameApp : public CGameCore
 	static CGameApp* m_pGameApp;
 
 	CBaseClass*	 pGameInstance;
+
+	CInputManager*	m_pInputManager;
+	CCameraManager* m_pCameraManager;
 
 public:
 	D3DXMATRIX m_matView;

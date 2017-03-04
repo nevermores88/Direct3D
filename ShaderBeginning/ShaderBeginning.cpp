@@ -137,6 +137,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	PAINTSTRUCT ps;
 	HDC hdc;
 
+	g_pInput->MsgProc(hWnd, message, wParam, lParam);
+
 	switch (message)
 	{
 	case WM_COMMAND:

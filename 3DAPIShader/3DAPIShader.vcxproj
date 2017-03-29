@@ -95,6 +95,10 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="RenderTarget.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Shader_3dapi_02_18.h" />
+    <ClInclude Include="Shader_3dapi_02_19.h" />
+    <ClInclude Include="Shader_3dapi_02_20.h" />
+    <ClInclude Include="Shader_3dapi_02_21.h" />
     <ClInclude Include="Shader_3dapi_03_01.h" />
     <ClInclude Include="Shader_3dapi_03_02.h" />
     <ClInclude Include="Shader_3dapi_03_03.h" />
@@ -103,6 +107,7 @@
     <ClInclude Include="Shader_3dapi_03_09.h" />
     <ClInclude Include="Shader_3dapi_03_10.h" />
     <ClInclude Include="Shader_3dapi_03_11.h" />
+    <ClInclude Include="Shader_3dapi_02_12.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TestShader.h" />
@@ -119,6 +124,10 @@
     <ClCompile Include="IRenderTarget.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="RenderTarget.cpp" />
+    <ClCompile Include="Shader_3dapi_02_18.cpp" />
+    <ClCompile Include="Shader_3dapi_02_19.cpp" />
+    <ClCompile Include="Shader_3dapi_02_20.cpp" />
+    <ClCompile Include="Shader_3dapi_02_21.cpp" />
     <ClCompile Include="Shader_3dapi_03_01.cpp" />
     <ClCompile Include="Shader_3dapi_03_02.cpp" />
     <ClCompile Include="Shader_3dapi_03_03.cpp" />
@@ -127,6 +136,7 @@
     <ClCompile Include="Shader_3dapi_03_09.cpp" />
     <ClCompile Include="Shader_3dapi_03_10.cpp" />
     <ClCompile Include="Shader_3dapi_03_11.cpp" />
+    <ClCompile Include="Shader_3dapi_02_12.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

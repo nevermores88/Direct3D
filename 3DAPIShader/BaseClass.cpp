@@ -18,6 +18,98 @@ HRESULT CBaseClass::Create(LPDIRECT3DDEVICE9 pdev)
 	return S_OK;
 }
 
+LPDIRECT3DVERTEXSHADER9 CBaseClass::LoadVertexShader(const char* szFileName, LPD3DXCONSTANTTABLE* pConstTbl)
+{
+	LPDIRECT3DVERTEXSHADER9 ret = NULL;
+
+	DWORD dwShaderFlags = 0;
+
+#if _DEBUG
+	dwShaderFlags |= D3DXSHADER_DEBUG;
+#endif
+
+	HRESULT	hr = 0;
+
+	LPD3DXBUFFER	pShader = NULL;
+	LPD3DXBUFFER	pErr = NULL;
+
+	hr = D3DXCompileShaderFromFile(szFileName
+		, NULL
+		, NULL
+		, "VtxPrc"
+		, "vs_2_0"
+		, dwShaderFlags
+		, &pShader
+		, &pErr
+		, pConstTbl
+		);
+
+	if (FAILED(hr) && pErr)
+	{
+		int size = pErr->GetBufferSize();
+		void* ack = pErr->GetBufferPointer();
+
+		if (ack)
+		{
+			char* str = new char[size];
+			sprintf(str, (const char*)ack, size);
+			OutputDebugString(str);
+			delete[] str;
+		}
+	}
+
+	m_pdev->CreateVertexShader((DWORD*)pShader->GetBufferPointer(), &ret);
+	pShader->Release();
+
+	return ret;
+}
+
+LPDIRECT3DPIXELSHADER9 CBaseClass::LoadPixelShader(const char* szFileName, LPD3DXCONSTANTTABLE* pConstTbl)
+{
+	LPDIRECT3DPIXELSHADER9 ret = NULL;
+
+	DWORD dwShaderFlags = 0;
+
+#if _DEBUG
+	dwShaderFlags |= D3DXSHADER_DEBUG;
+#endif
+
+	HRESULT	hr = 0;
+
+	LPD3DXBUFFER	pShader = NULL;
+	LPD3DXBUFFER	pErr = NULL;
+
+	hr = D3DXCompileShaderFromFile(szFileName
+		, NULL
+		, NULL
+		, "PxlPrc"
+		, "ps_2_0"
+		, dwShaderFlags
+		, &pShader
+		, &pErr
+		, pConstTbl
+		);
+
+	if (FAILED(hr) && pErr)
+	{
+		int size = pErr->GetBufferSize();
+		void* ack = pErr->GetBufferPointer();
+
+		if (ack)
+		{
+			char* str = new char[size];
+			sprintf(str, (const char*)ack, size);
+			OutputDebugString(str);
+			delete[] str;
+		}
+	}
+
+	m_pdev->CreatePixelShader((DWORD*)pShader->GetBufferPointer(), &ret);
+	pShader->Release();
+
+	return ret;
+}
+
 LPD3DXEFFECT CBaseClass::LoadShader(const char* szFileName)
 {
 	LPD3DXEFFECT ret = NULL;

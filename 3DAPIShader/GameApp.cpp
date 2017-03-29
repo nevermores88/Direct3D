@@ -1,6 +1,12 @@
 #include "stdafx.h"
 #include "GameApp.h"
 
+#include "Shader_3dapi_02_12.h"
+#include "Shader_3dapi_02_18.h"
+#include "Shader_3dapi_02_19.h"
+#include "Shader_3dapi_02_20.h"
+#include "Shader_3dapi_02_21.h"
+
 #include "Shader_3dapi_03_01.h"
 #include "Shader_3dapi_03_02.h"
 #include "Shader_3dapi_03_03.h"
@@ -27,7 +33,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	m_pGameInstance = new CShader_3dapi_03_03();
+	m_pGameInstance = new CShader_3dapi_02_21();
 
 	if (m_pGameInstance)
 		m_pGameInstance->Create(m_pdev);

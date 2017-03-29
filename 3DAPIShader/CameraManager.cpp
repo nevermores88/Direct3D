@@ -27,8 +27,8 @@ void CCameraManager::Create(LPDIRECT3DDEVICE9 pdev)
 
 	m_fYaw = 0.0f;
 	m_fPitch = 0.0f;
-	m_vEye = D3DXVECTOR3(160, 200, -90);
-	m_vLook = D3DXVECTOR3(230, 130, 110);
+	m_vEye = D3DXVECTOR3(0, 0, -100);
+	m_vLook = D3DXVECTOR3(0, 0, 0);
 	m_vUp = D3DXVECTOR3(0, 1, 0);
 
 	m_fScreenWidth = d3dDesc.Width;

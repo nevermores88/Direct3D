@@ -14,6 +14,8 @@ public:
 	virtual void Render(){};
 	virtual void Update(){};
 
+	LPDIRECT3DVERTEXSHADER9 LoadVertexShader(const char* szFileName, LPD3DXCONSTANTTABLE* pConstTbl);
+	LPDIRECT3DPIXELSHADER9 LoadPixelShader(const char* szFileName, LPD3DXCONSTANTTABLE* pConstTbl);
 	LPD3DXEFFECT LoadShader(const char* szFileName);
 	LPD3DXMESH LoadModel(const char* szFileName);
 	LPDIRECT3DTEXTURE9 LoadTexture(const char* szFileName);

@@ -11,6 +11,10 @@
 #include "Basic_3dapi_08_01.h"
 #include "Basic_3dapi_08_02.h"
 #include "Basic_3dapi_08_03.h"
+#include "Basic_3dapi_08_04.h"
+
+#include "Surface_3dapi_01.h"
+#include "Surface_3dapi_02.h"
 
 CGameApp* CGameApp::m_pGameApp = NULL;
 
@@ -28,7 +32,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	m_pGameInstance = new CBasic_3dapi_08_03();
+	m_pGameInstance = new CSurface_3dapi_02();
 
 	if (m_pGameInstance)
 		m_pGameInstance->Create(m_pdev);

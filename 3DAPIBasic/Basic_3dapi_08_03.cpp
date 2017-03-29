@@ -176,6 +176,11 @@ void CBasic_3dapi_08_03::Render()
 		m_pdev->SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_TFACTOR);
 		m_pdev->SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG2);
 
+		//알파블렌딩을 하고 싶을때 사용하자. (이렇게해도 그림자 겹침현상때문에 제대로 안됨)
+		/*m_pdev->SetRenderState(D3DRS_ZWRITEENABLE, FALSE);
+		m_pdev->SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_TFACTOR);
+		m_pdev->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG2);*/
+
 		// 호랑이를 그린다.
 		m_pdev->SetTransform(D3DTS_WORLD, &mtWorld);
 		m_pdev->SetFVF(Vertex::FVF);
@@ -192,6 +197,8 @@ void CBasic_3dapi_08_03::Render()
 		m_pdev->SetRenderState(D3DRS_BLENDOP, D3DBLENDOP_ADD);
 		m_pdev->SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
 		m_pdev->SetRenderState(D3DRS_STENCILENABLE, FALSE);
+		
+		//m_pdev->SetRenderState(D3DRS_ZWRITEENABLE, TRUE);	
 	}
 }
 

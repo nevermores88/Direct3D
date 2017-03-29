@@ -94,10 +94,13 @@
     <ClInclude Include="Basic_3dapi_08_01.h" />
     <ClInclude Include="Basic_3dapi_08_02.h" />
     <ClInclude Include="Basic_3dapi_08_03.h" />
+    <ClInclude Include="Basic_3dapi_08_04.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameCore.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Surface_3dapi_01.h" />
+    <ClInclude Include="Surface_3dapi_02.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
@@ -112,12 +115,15 @@
     <ClCompile Include="Basic_3dapi_08_01.cpp" />
     <ClCompile Include="Basic_3dapi_08_02.cpp" />
     <ClCompile Include="Basic_3dapi_08_03.cpp" />
+    <ClCompile Include="Basic_3dapi_08_04.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Surface_3dapi_01.cpp" />
+    <ClCompile Include="Surface_3dapi_02.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="3DAPIBasic.rc" />

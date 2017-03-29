@@ -1,5 +1,5 @@
 #pragma once
-class CBasic_3dapi_08_04
+class CBasic_3dapi_08_04 : public CBaseClass
 {
 	struct Vertex
 	{
@@ -16,6 +16,21 @@ class CBasic_3dapi_08_04
 		}
 
 		enum { FVF = (D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX1) };
+	};
+
+	struct VertexRHW
+	{
+		float x, y, z, w;
+		DWORD color;
+
+		VertexRHW(){}
+		VertexRHW(float _x, float _y, float _z, float _w, DWORD _color)
+		{
+			x = _x; y = _y; z = _z; w = _w;
+			color = _color;
+		}
+
+		enum { FVF = (D3DFVF_XYZRHW | D3DFVF_DIFFUSE) };
 	};
 
 	struct Index
@@ -38,7 +53,7 @@ class CBasic_3dapi_08_04
 	LPDIRECT3DTEXTURE9		m_pFloorTex;
 	Vertex m_pFloorVertices[4];
 
-	LPD3DXMESH		m_pMeshS;
+	VertexRHW		m_pShadowVertices[4];
 
 public:
 	CBasic_3dapi_08_04();

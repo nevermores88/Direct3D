@@ -66,6 +66,9 @@
     <ClInclude Include="Ex10_ShadowMapping.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Ex11_ColorConversion.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -108,6 +111,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Ex10_ShadowMapping.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex11_ColorConversion.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

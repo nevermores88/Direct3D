@@ -10,7 +10,7 @@ class CGameApp : public CGameCore
 {
 	static CGameApp* m_pGameApp;
 
-	CBaseClass*	 pGameInstance;
+	CBaseClass*	 m_pGameInstance;
 
 	CInputManager*	m_pInputManager;
 	CCameraManager* m_pCameraManager;

@@ -10,6 +10,7 @@
 #include "Ex08_EnvironmentMapping.h"
 #include "Ex09_UVAnimation.h"
 #include "Ex10_ShadowMapping.h"
+#include "Ex11_ColorConversion.h"
 
 CGameApp* CGameApp::m_pGameApp = NULL;
 
@@ -27,11 +28,11 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	pGameInstance = NULL;
-	pGameInstance = new CEx10_ShadowMapping();
+	m_pGameInstance = NULL;
+	m_pGameInstance = new CEx11_ColorConversion();
 
-	if (pGameInstance)
-		pGameInstance->Create(m_pdev);
+	if (m_pGameInstance)
+		m_pGameInstance->Create(m_pdev);
 
 	m_pInputManager = g_pInput;
 	m_pInputManager->Create(hWnd);
@@ -46,11 +47,11 @@ void CGameApp::Release()
 {
 	CGameCore::Release();
 
-	if (pGameInstance)
+	if (m_pGameInstance)
 	{
-		pGameInstance->Release();
-		delete pGameInstance;
-		pGameInstance = NULL;
+		m_pGameInstance->Release();
+		delete m_pGameInstance;
+		m_pGameInstance = NULL;
 	}
 
 	if (!m_pGameApp)
@@ -84,8 +85,8 @@ void CGameApp::Render()
 		if (m_pCameraManager)
 			m_pCameraManager->SetTransfrom();
 
-		if (pGameInstance)
-			pGameInstance->Render();
+		if (m_pGameInstance)
+			m_pGameInstance->Render();
 
 		m_pdev->EndScene();
 	}
@@ -128,8 +129,8 @@ void CGameApp::Update()
 		}
 	}
 
-	if (pGameInstance)
-		pGameInstance->Update();
+	if (m_pGameInstance)
+		m_pGameInstance->Update();
 }
 
 void CGameApp::SetCamera()

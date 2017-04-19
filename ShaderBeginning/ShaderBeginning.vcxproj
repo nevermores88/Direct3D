@@ -93,6 +93,7 @@
     <ClInclude Include="Ex08_EnvironmentMapping.h" />
     <ClInclude Include="Ex09_UVAnimation.h" />
     <ClInclude Include="Ex10_ShadowMapping.h" />
+    <ClInclude Include="Ex11_ColorConversion.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameCore.h" />
     <ClInclude Include="Resource.h" />
@@ -111,6 +112,7 @@
     <ClCompile Include="Ex08_EnvironmentMapping.cpp" />
     <ClCompile Include="Ex09_UVAnimation.cpp" />
     <ClCompile Include="Ex10_ShadowMapping.cpp" />
+    <ClCompile Include="Ex11_ColorConversion.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="ShaderBeginning.cpp" />

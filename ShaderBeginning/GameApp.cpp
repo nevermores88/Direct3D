@@ -11,6 +11,7 @@
 #include "Ex09_UVAnimation.h"
 #include "Ex10_ShadowMapping.h"
 #include "Ex11_ColorConversion.h"
+#include "Ex12_EdgeDetection.h"
 
 CGameApp* CGameApp::m_pGameApp = NULL;
 
@@ -29,7 +30,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	SetCamera();
 
 	m_pGameInstance = NULL;
-	m_pGameInstance = new CEx11_ColorConversion();
+	m_pGameInstance = new CEx08_EnvironmentMapping();
 
 	if (m_pGameInstance)
 		m_pGameInstance->Create(m_pdev);
@@ -188,4 +189,16 @@ HWND CGameApp::GetHWND()
 const D3DVIEWPORT9* const CGameApp::GetViewPort()
 {
 	return &m_VP;
+}
+
+void CGameApp::GetWidthHeight(int& iWidth, int& iHeight)
+{
+	LPDIRECT3DSURFACE9	pSurface;
+	D3DSURFACE_DESC	desc;
+
+	m_pdev->GetRenderTarget(0, &pSurface);
+	pSurface->GetDesc(&desc);
+
+	iWidth = desc.Width;
+	iHeight = desc.Height;
 }

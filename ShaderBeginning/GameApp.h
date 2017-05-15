@@ -36,4 +36,6 @@ public:
 	void SetCamera();
 	HWND GetHWND();
 	const D3DVIEWPORT9* const GetViewPort();
+
+	void GetWidthHeight(int& iWidth, int& iHeight);
 };

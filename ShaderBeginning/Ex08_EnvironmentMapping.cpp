@@ -91,8 +91,10 @@ void CEx08_EnvironmentMapping::Render()
 		D3DXMatrixMultiply(&mtWorldView, &mtWorld, &mtView);
 		D3DXMatrixMultiply(&mtWorldViewProj, &mtWorldView, &mtProj);
 
-		D3DXVECTOR4 vLightPos = D3DXVECTOR4(500.0f, 500.0f, -500.0f, 1.0f);
-		D3DXVECTOR4 vCameraPos(g_pGame->m_Eye.x, g_pGame->m_Eye.y, g_pGame->m_Eye.z, 0.0f);
+		D3DXVECTOR3 vCamPos = g_pCamera->GetEye();
+
+		D3DXVECTOR4 vLightPos = D3DXVECTOR4(500.0f, 500.0f, -500.0f, 1.0f);	
+		D3DXVECTOR4 vCameraPos(vCamPos.x, vCamPos.y, vCamPos.z, 0.0f);
 		D3DXVECTOR4 vLightColor(0.7f, 0.7f, 1.0f, 1.0f);
 
 		m_pShader->SetMatrix("g_mtWorld", &mtWorld);

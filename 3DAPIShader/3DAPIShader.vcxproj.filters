@@ -108,11 +108,32 @@
     <ClInclude Include="Shader_3dapi_02_19.h">
       <Filter>헤더 파일\Chapter02</Filter>
     </ClInclude>
+    <ClInclude Include="Shader_3dapi_02_28.h">
+      <Filter>헤더 파일\Chapter02</Filter>
+    </ClInclude>
     <ClInclude Include="Shader_3dapi_02_20.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Chapter02</Filter>
     </ClInclude>
     <ClInclude Include="Shader_3dapi_02_21.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Chapter02</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_02_22.h">
+      <Filter>헤더 파일\Chapter02</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_02_23.h">
+      <Filter>헤더 파일\Chapter02</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_02_24.h">
+      <Filter>헤더 파일\Chapter02</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_02_25.h">
+      <Filter>헤더 파일\Chapter02</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_02_26.h">
+      <Filter>헤더 파일\Chapter02</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_02_27.h">
+      <Filter>헤더 파일\Chapter02</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -188,11 +209,32 @@
     <ClCompile Include="Shader_3dapi_02_19.cpp">
       <Filter>소스 파일\Chapter02</Filter>
     </ClCompile>
+    <ClCompile Include="Shader_3dapi_02_22.cpp">
+      <Filter>소스 파일\Chapter02</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_02_23.cpp">
+      <Filter>소스 파일\Chapter02</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_02_24.cpp">
+      <Filter>소스 파일\Chapter02</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_02_25.cpp">
+      <Filter>소스 파일\Chapter02</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_02_26.cpp">
+      <Filter>소스 파일\Chapter02</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_02_27.cpp">
+      <Filter>소스 파일\Chapter02</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_02_28.cpp">
+      <Filter>소스 파일\Chapter02</Filter>
+    </ClCompile>
     <ClCompile Include="Shader_3dapi_02_20.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Chapter02</Filter>
     </ClCompile>
     <ClCompile Include="Shader_3dapi_02_21.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Chapter02</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

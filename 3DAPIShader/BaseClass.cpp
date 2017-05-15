@@ -58,8 +58,11 @@ LPDIRECT3DVERTEXSHADER9 CBaseClass::LoadVertexShader(const char* szFileName, LPD
 		}
 	}
 
-	m_pdev->CreateVertexShader((DWORD*)pShader->GetBufferPointer(), &ret);
-	pShader->Release();
+	if (pShader)
+	{
+		m_pdev->CreateVertexShader((DWORD*)pShader->GetBufferPointer(), &ret);
+		pShader->Release();
+	}
 
 	return ret;
 }
@@ -104,8 +107,11 @@ LPDIRECT3DPIXELSHADER9 CBaseClass::LoadPixelShader(const char* szFileName, LPD3D
 		}
 	}
 
-	m_pdev->CreatePixelShader((DWORD*)pShader->GetBufferPointer(), &ret);
-	pShader->Release();
+	if (pShader)
+	{
+		m_pdev->CreatePixelShader((DWORD*)pShader->GetBufferPointer(), &ret);
+		pShader->Release();
+	}
 
 	return ret;
 }

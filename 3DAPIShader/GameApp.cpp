@@ -21,6 +21,8 @@
 #include "Shader_3dapi_03_09.h"
 #include "Shader_3dapi_03_10.h"
 #include "Shader_3dapi_03_11.h"
+#include "Shader_3dapi_03_12.h"
+#include "Shader_3dapi_03_14.h"
 #include "TestShader.h"
 
 CGameApp* CGameApp::m_pGameApp = NULL;
@@ -39,7 +41,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	m_pGameInstance = new CShader_3dapi_02_27();
+	m_pGameInstance = new CShader_3dapi_03_14();
 
 	if (m_pGameInstance)
 		m_pGameInstance->Create(m_pdev);

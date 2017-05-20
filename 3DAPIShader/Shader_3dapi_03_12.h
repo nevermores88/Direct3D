@@ -1,55 +1,19 @@
+//---------------------------------------------------------------------------------------------------
+//
+//Description : 2D Sprite 01
+//
+//---------------------------------------------------------------------------------------------------
 #pragma once
+
+#include "Sprite.h"
+
 class CShader_3dapi_03_12 : public CBaseClass
-{
-	struct LcTexture
-	{
-		int m_iImgWidth;		// Original Image Width
-		int m_iImgHeight;		// Original Image Height
-		int m_iImgDepth;		// Original Image Depth
+{	
+	LPD3DXFONT	m_pFont;
+	TCHAR	m_szMessage[512];
 
-		int m_iTexWidth;			//Texture Width
-		int m_iTexHeight;		//Texture Height
-		
-		LPDIRECT3DTEXTURE9 m_pTex;
-
-		LcTexture()
-		{
-			m_iImgWidth = 0;
-			m_iImgHeight = 0;
-			m_iImgDepth = 0;
-
-			m_iTexWidth = 0;
-			m_iTexHeight = 0;
-
-			m_pTex = NULL;
-		}
-	};						   
-	
-	struct Vertex
-	{
-		D3DXVECTOR2 p;
-		float z;
-		float w;
-		D3DXVECTOR2 t;
-
-		Vertex(){}
-		Vertex(float _x, float _y, float _z, float _w, float _tx, float _ty)
-		{
-			p.x = _x; p.y = _y;
-			z = _z; w = _w;
-			t.x = _tx; t.y = _ty;
-		}
-
-		enum { FVF = (D3DFVF_XYZRHW | D3DFVF_TEX1) };
-	};
-
-	LPD3DXEFFECT m_pShader;
-	LPDIRECT3DVERTEXDECLARATION9 m_pFVF;
-
-	Vertex m_pVertices[4];
-
-	int m_iScreenWidth;
-	int m_iScreenHeight;
+	StTexture	m_stTexture;
+	CSprite*		m_pSprite;
 
 public:
 	CShader_3dapi_03_12();

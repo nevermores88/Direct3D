@@ -93,6 +93,12 @@
     <ClInclude Include="Surface_3dapi_02.h">
       <Filter>헤더 파일\Surface</Filter>
     </ClInclude>
+    <ClInclude Include="Basic_3dapi_08_05.h">
+      <Filter>헤더 파일\Chapter08</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic_3dapi_08_06.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -145,6 +151,12 @@
     </ClCompile>
     <ClCompile Include="Surface_3dapi_02.cpp">
       <Filter>소스 파일\Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic_3dapi_08_05.cpp">
+      <Filter>소스 파일\Chapter08</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic_3dapi_08_06.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

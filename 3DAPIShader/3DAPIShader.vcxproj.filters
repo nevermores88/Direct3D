@@ -135,6 +135,15 @@
     <ClInclude Include="Shader_3dapi_02_27.h">
       <Filter>헤더 파일\Chapter02</Filter>
     </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_03_12.h">
+      <Filter>헤더 파일\Chapter03</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_03_14.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -235,6 +244,15 @@
     </ClCompile>
     <ClCompile Include="Shader_3dapi_02_21.cpp">
       <Filter>소스 파일\Chapter02</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_03_12.cpp">
+      <Filter>소스 파일\Chapter03</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_03_14.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

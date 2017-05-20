@@ -86,7 +86,7 @@ void CMesh::Render()
 {
 	if (m_pdev)
 	{
-		// 텍스춰 U, V, W의 어드레스 모드를 Wrap으로 설정한다.
+		//// 텍스춰 U, V, W의 어드레스 모드를 Wrap으로 설정한다.
 		m_pdev->SetSamplerState(0, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP);
 		m_pdev->SetSamplerState(0, D3DSAMP_ADDRESSV, D3DTADDRESS_WRAP);
 		m_pdev->SetSamplerState(0, D3DSAMP_ADDRESSW, D3DTADDRESS_WRAP);

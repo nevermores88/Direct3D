@@ -82,7 +82,7 @@ void CMesh::Release()
 		m_pMesh->Release();
 }
 
-void CMesh::Render()
+void CMesh::Render(bool bUseMaterial)
 {
 	if (m_pdev)
 	{
@@ -112,8 +112,11 @@ void CMesh::Render()
 		for (DWORD i = 0; i < m_dwNumMtrl; i++)
 		{
 			// Set the material and texture for this subset
-			m_pdev->SetMaterial(&m_pMtrls[i]);
-			m_pdev->SetTexture(0, m_pTextures[i]);
+			if (bUseMaterial)
+			{
+				m_pdev->SetMaterial(&m_pMtrls[i]);
+				m_pdev->SetTexture(0, m_pTextures[i]);
+			}
 
 			// Draw the mesh subset
 			m_pMesh->DrawSubset(i);

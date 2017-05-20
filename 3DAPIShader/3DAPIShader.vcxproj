@@ -117,6 +117,9 @@
     <ClInclude Include="Shader_3dapi_02_12.h" />
     <ClInclude Include="Shader_3dapi_03_12.h" />
     <ClInclude Include="Shader_3dapi_03_14.h" />
+    <ClInclude Include="Shader_3dapi_03_15.h" />
+    <ClInclude Include="Shader_3dapi_03_16.h" />
+    <ClInclude Include="Shader_3dapi_03_17.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -156,6 +159,9 @@
     <ClCompile Include="Shader_3dapi_02_12.cpp" />
     <ClCompile Include="Shader_3dapi_03_12.cpp" />
     <ClCompile Include="Shader_3dapi_03_14.cpp" />
+    <ClCompile Include="Shader_3dapi_03_15.cpp" />
+    <ClCompile Include="Shader_3dapi_03_16.cpp" />
+    <ClCompile Include="Shader_3dapi_03_17.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

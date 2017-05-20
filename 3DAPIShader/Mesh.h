@@ -15,7 +15,7 @@ public:
 	HRESULT Create(LPDIRECT3DDEVICE9 pdev, char* xFileName, char* szPath = NULL);
 	void Release();
 
-	void Render();
+	void Render(bool bUseMaterial = TRUE);
 	void Update();
 };
 

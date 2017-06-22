@@ -82,32 +82,34 @@ void CMesh::Release()
 		m_pMesh->Release();
 }
 
-void CMesh::Render(bool bUseMaterial)
+void CMesh::Render(bool bUseMaterial, bool bUseFixed)
 {
 	if (m_pdev)
 	{
-		//// 텍스춰 U, V, W의 어드레스 모드를 Wrap으로 설정한다.
-		m_pdev->SetSamplerState(0, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP);
-		m_pdev->SetSamplerState(0, D3DSAMP_ADDRESSV, D3DTADDRESS_WRAP);
-		m_pdev->SetSamplerState(0, D3DSAMP_ADDRESSW, D3DTADDRESS_WRAP);
+		if (bUseFixed)
+		{
+			//// 텍스춰 U, V, W의 어드레스 모드를 Wrap으로 설정한다.
+			m_pdev->SetSamplerState(0, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP);
+			m_pdev->SetSamplerState(0, D3DSAMP_ADDRESSV, D3DTADDRESS_WRAP);
+			m_pdev->SetSamplerState(0, D3DSAMP_ADDRESSW, D3DTADDRESS_WRAP);
 
-		// 텍스춰의 필터링을 Linear로 설정한다.
-		m_pdev->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
-		m_pdev->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
-		m_pdev->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
+			// 텍스춰의 필터링을 Linear로 설정한다.
+			m_pdev->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
+			m_pdev->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
+			m_pdev->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
 
 
-		m_pdev->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-		m_pdev->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
-		m_pdev->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+			m_pdev->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+			m_pdev->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+			m_pdev->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
 
-		m_pdev->SetRenderState(D3DRS_ZWRITEENABLE, TRUE);
-		m_pdev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+			m_pdev->SetRenderState(D3DRS_ZWRITEENABLE, TRUE);
+			m_pdev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 
-		m_pdev->SetRenderState(D3DRS_ALPHATESTENABLE, TRUE);
-		m_pdev->SetRenderState(D3DRS_ALPHAREF, 156);
-		m_pdev->SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
-
+			m_pdev->SetRenderState(D3DRS_ALPHATESTENABLE, TRUE);
+			m_pdev->SetRenderState(D3DRS_ALPHAREF, 156);
+			m_pdev->SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
+		}
 
 		for (DWORD i = 0; i < m_dwNumMtrl; i++)
 		{

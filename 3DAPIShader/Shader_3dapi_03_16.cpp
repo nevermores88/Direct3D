@@ -79,13 +79,13 @@ void CShader_3dapi_03_16::Render()
 		D3DXVECTOR4 vLightDir[4];
 		D3DXVECTOR4 vLightDiffuse[4];
 
+		m_pdev->GetTransform(D3DTS_VIEW, &mtView);
+		m_pdev->GetTransform(D3DTS_PROJECTION, &mtProj);
+
 		vLightDir[0] = D3DXVECTOR4(1.0F, 1.0F, 1.0F, 0);
 		vLightDir[1] = D3DXVECTOR4(-1.0F, 1.0F, 1.0F, 0);
 		vLightDir[2] = D3DXVECTOR4(0.0F, 1.0F, 1.0F, 0);
 		vLightDir[3] = D3DXVECTOR4(0.0F, -1.0F, 0.0F, 0);
-
-		m_pdev->GetTransform(D3DTS_VIEW, &mtView);
-		m_pdev->GetTransform(D3DTS_PROJECTION, &mtProj);
 
 		for (int i = 0; i < 4; ++i)
 			D3DXVec4Normalize(&vLightDir[i], &vLightDir[i]);

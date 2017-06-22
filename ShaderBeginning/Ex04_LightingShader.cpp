@@ -52,12 +52,20 @@ void CEx04_LightingShader::Render()
 		D3DXMATRIX mtWorld;
 		D3DXMatrixRotationY(&mtWorld, m_fRotY);
 
+		D3DXMATRIX mtView;
+		D3DXMATRIX mtProj;
+
+		m_pdev->GetTransform(D3DTS_VIEW, &mtView);
+		m_pdev->GetTransform(D3DTS_PROJECTION, &mtProj);
+
 		m_pShader->SetMatrix("gWorldMatrix", &mtWorld);
-		m_pShader->SetMatrix("gViewMatrix", &(g_pGame->m_matView));
-		m_pShader->SetMatrix("gProjectionMatrix", &(g_pGame->m_matProj));
+		m_pShader->SetMatrix("gViewMatrix", &mtView);
+		m_pShader->SetMatrix("gProjectionMatrix", &mtProj);
 
 		D3DXVECTOR4	gWorldLightPosition(500.0f, 500.0f, -500.0f, 1.0f);
-		D3DXVECTOR4    gWorldCameraPosition(g_pGame->m_Eye.x, g_pGame->m_Eye.y, g_pGame->m_Eye.z, 0.0f);
+
+		D3DXVECTOR3 vCamPos = g_pCamera->GetEye();
+		D3DXVECTOR4    gWorldCameraPosition(vCamPos.x, vCamPos.y, vCamPos.z, 0.0f);
 		m_pShader->SetVector("gWorldLightPosition", &gWorldLightPosition);
 		m_pShader->SetVector("gWorldCameraPosition", &gWorldCameraPosition);
 

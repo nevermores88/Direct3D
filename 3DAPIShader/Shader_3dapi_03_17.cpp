@@ -25,8 +25,6 @@ HRESULT CShader_3dapi_03_17::Create(LPDIRECT3DDEVICE9 pdev)
 	if (FAILED(m_pdev->CreateVertexDeclaration(vertex_decl, &m_pFVF)))
 		return E_FAIL;
 
-	D3DXCreateTextureFromFile(m_pdev, "Ex03_17/wood.jpg", &m_pTex);
-
 	m_pMesh = NULL;
 	m_pMesh = new CMesh;
 	m_pMesh->Create(m_pdev, "Ex03_17/teapot.x");
@@ -46,12 +44,6 @@ void CShader_3dapi_03_17::Release()
 	{
 		m_pFVF->Release();
 		m_pFVF = NULL;
-	}
-
-	if (m_pTex)
-	{
-		m_pTex->Release();
-		m_pTex = NULL;
 	}
 
 	if (m_pMesh)

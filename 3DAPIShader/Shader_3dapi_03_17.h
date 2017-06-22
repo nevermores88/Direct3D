@@ -29,7 +29,6 @@ class CShader_3dapi_03_17 : public CBaseClass
 	LPDIRECT3DVERTEXDECLARATION9 m_pFVF;
 
 	CMesh*	m_pMesh;
-	LPDIRECT3DTEXTURE9		m_pTex;
 
 	D3DXMATRIX m_mtWorld;
 	D3DXMATRIX m_mtRot;

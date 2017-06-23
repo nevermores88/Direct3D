@@ -79,3 +79,16 @@ LPDIRECT3DTEXTURE9 CD3DUtility::LoadTexture(LPDIRECT3DDEVICE9 pdev, const char* 
 
 	return ret;
 }
+
+DWORD CD3DUtility::VectorToRGB(D3DXVECTOR3* vNormal)
+{
+	float r = vNormal->x;
+	float g = vNormal->y;
+	float b = vNormal->z;
+
+	DWORD dwR = (DWORD)(127 * r + 128);
+	DWORD dwG = (DWORD)(127 * g + 128);
+	DWORD dwB = (DWORD)(127 * b + 128);
+
+	return (DWORD)(0xff000000 + (dwR << 16) + (dwG << 8) + dwB);
+}

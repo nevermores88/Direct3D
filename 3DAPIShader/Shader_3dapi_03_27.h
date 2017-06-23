@@ -1,11 +1,11 @@
 //---------------------------------------------------------------------------------------------------
 //
-//Description : Lighting Mapping 01
+//Description : Lighting Mapping 02
 //
 //---------------------------------------------------------------------------------------------------
 
 #pragma once
-class CShader_3dapi_03_26 : public CBaseClass
+class CShader_3dapi_03_27 : public CBaseClass
 {
 	struct Vertex
 	{
@@ -35,8 +35,8 @@ class CShader_3dapi_03_26 : public CBaseClass
 	D3DXMATRIX m_mtRot;
 
 public:
-	CShader_3dapi_03_26();
-	~CShader_3dapi_03_26();
+	CShader_3dapi_03_27();
+	~CShader_3dapi_03_27();
 
 	virtual HRESULT Create(LPDIRECT3DDEVICE9 pdev);
 	virtual void Release();

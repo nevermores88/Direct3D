@@ -1,42 +1,42 @@
 //---------------------------------------------------------------------------------------------------
 //
-//Description : Lighting Mapping 01
-//
+//Description : Bump Mapping 02
 //---------------------------------------------------------------------------------------------------
 
 #pragma once
-class CShader_3dapi_03_26 : public CBaseClass
+class CShader_3dapi_03_29 : public CBaseClass
 {
 	struct Vertex
 	{
 		D3DXVECTOR3 p;
 		D3DXVECTOR3 n;
 		float u, v;
+		D3DXVECTOR3 t;
+		D3DXVECTOR3 b;
 
 		Vertex(){}
-		Vertex(float _x, float _y, float _z, float _nx, float _ny, float _nz, float _u, float _v)
+		Vertex(float _x, float _y, float _z, float _u, float _v)
 		{
 			p.x = _x; p.y = _y; p.z = _z;
-			n.x = _nx; n.y = _ny; n.z = _nz;
 			u = _u, v = _v;
 		}
 
-		enum { FVF = (D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1) };
+		enum { FVF = (D3DFVF_XYZ | D3DFVF_NORMAL| D3DFVF_TEX3 | D3DFVF_TEXCOORDSIZE3(1) | D3DFVF_TEXCOORDSIZE3(2)) };
 	};
 
 	LPD3DXEFFECT m_pShader;
 
-	Vertex	m_pVertices[4];
+	int m_iVertexNum;
+	Vertex*	m_pVertices;
+	LPDIRECT3DVERTEXDECLARATION9	m_pFVF;
 
-	LPDIRECT3DTEXTURE9		m_pDiffuseTex;
-	LPDIRECT3DTEXTURE9		m_pLightTex;
+	LPDIRECT3DTEXTURE9		m_pNormalTex;
 
-	D3DXMATRIX m_mtWorld;
-	D3DXMATRIX m_mtRot;
+	D3DXVECTOR3	m_vLightDir;
 
 public:
-	CShader_3dapi_03_26();
-	~CShader_3dapi_03_26();
+	CShader_3dapi_03_29();
+	~CShader_3dapi_03_29();
 
 	virtual HRESULT Create(LPDIRECT3DDEVICE9 pdev);
 	virtual void Release();

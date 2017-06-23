@@ -13,6 +13,7 @@ public:
 	static LPD3DXEFFECT LoadShader(LPDIRECT3DDEVICE9 pdev, const char* szFileName);
 	static LPD3DXMESH LoadModel(LPDIRECT3DDEVICE9 pdev, const char* szFileName);
 	static LPDIRECT3DTEXTURE9 LoadTexture(LPDIRECT3DDEVICE9 pdev, const char* szFileName);
+	static DWORD VectorToRGB(D3DXVECTOR3* vNormal);
 };
 
 //inline CD3DUtility* GetD3DUtility() { return CD3DUtility::GetThis(); }

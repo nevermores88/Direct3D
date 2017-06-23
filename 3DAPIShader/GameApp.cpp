@@ -50,6 +50,7 @@
 //Bump Mapping
 #include "Shader_3dapi_03_28.h"
 #include "Shader_3dapi_03_29.h"
+#include "Shader_3dapi_03_30.h"
 #include "TestShader.h"
 
 CGameApp* CGameApp::m_pGameApp = NULL;
@@ -68,7 +69,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	m_pGameInstance = new CShader_3dapi_03_29();
+	m_pGameInstance = new CShader_3dapi_03_30();
 
 	if (m_pGameInstance)
 		m_pGameInstance->Create(m_pdev);

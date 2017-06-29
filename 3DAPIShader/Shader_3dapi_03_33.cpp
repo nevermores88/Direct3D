@@ -1,32 +1,34 @@
 #include "stdafx.h"
-#include "Shader_3dapi_03_31.h"
+#include "Shader_3dapi_03_33.h"
 
 
-CShader_3dapi_03_31::CShader_3dapi_03_31()
+CShader_3dapi_03_33::CShader_3dapi_03_33()
 {
 }
 
 
-CShader_3dapi_03_31::~CShader_3dapi_03_31()
+CShader_3dapi_03_33::~CShader_3dapi_03_33()
 {
 }
 
-HRESULT CShader_3dapi_03_31::Create(LPDIRECT3DDEVICE9 pdev)
+HRESULT CShader_3dapi_03_33::Create(LPDIRECT3DDEVICE9 pdev)
 {
 	CBaseClass::Create(pdev);
 
-	m_pShader = LoadShader("Ex03_31/Shader.fx");
+	m_pShader = LoadShader("Ex03_33/Shader.fx");
 	if (!m_pShader)
 		return E_FAIL;
 
-	D3DXCreateTextureFromFile(m_pdev, "Ex03_31/rock_n.tga", &m_pNormalTex);
-	D3DXCreateTextureFromFile(m_pdev, "Ex03_32/concrete.bmp", &m_pDiffuseTex);
+	D3DXCreateTextureFromFile(m_pdev, "Ex03_33/earth_d.bmp", &m_pDiffuseTex);
+	D3DXCreateTextureFromFile(m_pdev, "Ex03_33/earth_l.bmp", &m_pLTex);
+	D3DXCreateTextureFromFile(m_pdev, "Ex03_33/earth_s.bmp", &m_pSpecularTex);
 
-	DWORD dwFVF = Vertex::FVF;
+	//이 예제에서는 사용안해도 되는듯
+	/*DWORD dwFVF = Vertex::FVF;
 	D3DVERTEXELEMENT9	vertex_decl[MAX_FVF_DECL_SIZE];
 	D3DXDeclaratorFromFVF(dwFVF, vertex_decl);
 	if (FAILED(m_pdev->CreateVertexDeclaration(vertex_decl, &m_pFVF)))
-		return E_FAIL;
+	return E_FAIL;*/
 
 	// Create Vertex
 	INT	iNSphereSegments = 128;
@@ -91,7 +93,7 @@ HRESULT CShader_3dapi_03_31::Create(LPDIRECT3DDEVICE9 pdev)
 	return S_OK;
 }
 
-void CShader_3dapi_03_31::Release()
+void CShader_3dapi_03_33::Release()
 {
 	if (m_pShader)
 	{
@@ -105,10 +107,22 @@ void CShader_3dapi_03_31::Release()
 		m_pFVF = NULL;
 	}
 
-	if (m_pNormalTex)
+	if (m_pDiffuseTex)
 	{
-		m_pNormalTex->Release();
-		m_pNormalTex = NULL;
+		m_pDiffuseTex->Release();
+		m_pDiffuseTex = NULL;
+	}
+
+	if (m_pLTex)
+	{
+		m_pLTex->Release();
+		m_pLTex = NULL;
+	}
+
+	if (m_pSpecularTex)
+	{
+		m_pSpecularTex->Release();
+		m_pSpecularTex = NULL;
 	}
 
 	if (m_pVertices)
@@ -118,40 +132,26 @@ void CShader_3dapi_03_31::Release()
 	}
 }
 
-void CShader_3dapi_03_31::Render()
+void CShader_3dapi_03_33::Render()
 {
 	if (m_pdev)
 	{
-		D3DXMATRIX mtWorld;
-		D3DXMATRIX mtView;
-		D3DXMATRIX mtProj;
-		D3DXMATRIX mtRot;
-		D3DXVECTOR4 vLightDir;
+		D3DXMATRIX mtTexScale;
+		D3DXMatrixIdentity(&mtTexScale);
 
-		static float fRot = 0.0f;
-		fRot += 0.2f;
-		float fTime = -D3DXToRadian(fRot);
+		mtTexScale._11 = 0.5f;
+		mtTexScale._22 = -0.5f;
+		mtTexScale._33 = 0.0f;
+		mtTexScale._41 = 0.5f;
+		mtTexScale._42 = 0.5f;
+		mtTexScale._43 = 1.0f;
+		mtTexScale._44 = 1.0f;
 
-		m_pdev->GetTransform(D3DTS_VIEW, &mtView);
-		m_pdev->GetTransform(D3DTS_PROJECTION, &mtProj);
-
-		vLightDir = D3DXVECTOR4(m_vLightDir.x, m_vLightDir.y, m_vLightDir.z, 0);
-
-		D3DXVec4Normalize(&vLightDir, &vLightDir);
-		D3DXMatrixRotationY(&mtRot, fTime);
-		mtWorld = mtRot;
-
-		m_pdev->SetVertexDeclaration(m_pFVF);
-
-		m_pShader->SetMatrix("g_mtWorld", &mtWorld);
-		m_pShader->SetMatrix("g_mtView", &mtView);
-		m_pShader->SetMatrix("g_mtProj", &mtProj);
-		m_pShader->SetMatrix("g_mtRot", &mtRot);
-
-		m_pShader->SetVector("g_vLightDir", &vLightDir);
+		m_pdev->SetFVF(Vertex::FVF);
 
 		m_pShader->SetTexture("g_DiffuseTex", m_pDiffuseTex);
-		m_pShader->SetTexture("g_NormalTex", m_pNormalTex);
+		m_pShader->SetTexture("g_LTex", m_pLTex);
+		m_pShader->SetTexture("g_SpecularTex", m_pSpecularTex);
 
 		UINT numPasses = 0;
 		m_pShader->Begin(&numPasses, NULL);
@@ -160,37 +160,38 @@ void CShader_3dapi_03_31::Render()
 			{
 				m_pShader->BeginPass(i);
 				{
+					m_pdev->SetTextureStageState(0, D3DTSS_TEXCOORDINDEX, D3DTSS_TCI_CAMERASPACENORMAL);
+					m_pdev->SetTextureStageState(2, D3DTSS_TEXCOORDINDEX, D3DTSS_TCI_CAMERASPACEREFLECTIONVECTOR);
+
+					m_pdev->SetTransform(D3DTS_TEXTURE0, &mtTexScale);
+					m_pdev->SetTransform(D3DTS_TEXTURE1, &mtTexScale);
+					m_pdev->SetTransform(D3DTS_TEXTURE2, &mtTexScale);
+
+					m_pdev->SetTransform(D3DTS_WORLD, &m_mtWorld);
+
 					m_pdev->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, m_iVertexNum - 2, m_pVertices, sizeof(Vertex));
 				}
 				m_pShader->EndPass();
 			}
 		}
 		m_pShader->End();
-
-		m_pdev->SetVertexShader(NULL);
-		m_pdev->SetPixelShader(NULL);
-		m_pdev->SetVertexDeclaration(NULL);
 	}
 }
 
-void CShader_3dapi_03_31::Update()
+void CShader_3dapi_03_33::Update()
 {
 	if (m_pdev)
 	{
-		D3DXMATRIX	mtTM;
-		D3DXMATRIX	mtRotX;
+		D3DXMATRIX	mtRotY;
 		D3DXMATRIX	mtRotZ;
 
 		static float fRot = 0.0f;
 		fRot += 0.3f;
-		FLOAT	fAngle = D3DXToRadian(fRot);
-		D3DXMatrixRotationY(&mtTM, fAngle*3.f);
-		D3DXMatrixRotationZ(&mtRotZ, fAngle*2.f);
-		D3DXMatrixRotationX(&mtRotX, fAngle*1.f);
 
-		mtTM *= mtRotZ;
-		mtTM *= mtRotX;
+		D3DXMatrixIdentity(&m_mtWorld);
+		D3DXMatrixRotationY(&mtRotY, D3DXToRadian(fRot));
+		D3DXMatrixRotationZ(&mtRotZ, D3DXToRadian(-23.5f));
 
-		D3DXVec3TransformCoord(&m_vLightDir, &D3DXVECTOR3(0, -1, 0), &mtTM);
+		m_mtWorld = mtRotY * mtRotZ;
 	}
 }

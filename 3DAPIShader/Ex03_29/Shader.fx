@@ -59,7 +59,6 @@ VS_OUTPUT VtxPrc(VS_INPUT input)
 
 struct PS_INPUT
 {
-	float4 mPosition : POSITION;
 	float2 mTexCoord: TEXCOORD0;
 	float3 mT : TEXCOORD1;
 	float3 mB : TEXCOORD2;

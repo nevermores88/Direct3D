@@ -1,7 +1,4 @@
-float4x4 g_mtWorld;
-float4x4 g_mtView;
-float4x4 g_mtProj;
-float4x4 g_mtRot;
+float4x4 g_mtWorldViewProj;
 float3 g_vLightDir;
 
 texture g_DiffuseTex;
@@ -46,16 +43,11 @@ VS_OUTPUT VtxPrc(VS_INPUT input)
 
 	float4 position = input.mPosition;
 
-		position = mul(position, g_mtWorld);
-
-	float3 N = mul(input.mNormal, g_mtRot);
-
-	position = mul(position, g_mtView);
-	position = mul(position, g_mtProj);
+	position = mul(position, g_mtWorldViewProj);
 
 	output.mPosition = position;
 	output.mTexCoord = input.mTexCoord;
-	output.mN = N;
+	output.mN = input.mNormal;
 
 	return output;
 }
@@ -71,7 +63,7 @@ struct PS_OUTPUT
 	float4 mColor : COLOR;
 };
 
-PS_OUTPUT PxlPrc(PS_INPUT input)
+PS_OUTPUT NormalPrc(PS_INPUT input, uniform int iPower = 1)
 {
 	PS_OUTPUT output = (PS_OUTPUT)0;
 
@@ -95,9 +87,32 @@ PS_OUTPUT PxlPrc(PS_INPUT input)
 	C1 = normalize(C1);
 
 	bump = dot(C1, lightDir);
-	bump *= tex2D(DiffuseSampler, input.mTexCoord);
+	bump += 0.85f;
+	bump = pow(bump, iPower);
 
 	output.mColor = bump;
+
+	return output;
+}
+
+PS_OUTPUT PxlPrc0(PS_INPUT input)
+{
+	PS_OUTPUT output = (PS_OUTPUT)0;
+	output.mColor = tex2D(DiffuseSampler, input.mTexCoord);
+
+	return output;
+}
+
+PS_OUTPUT PxlPrc1(PS_INPUT input)
+{
+	return NormalPrc(input, 1);
+}
+
+PS_OUTPUT PxlPrc2(PS_INPUT input, uniform int iPower)
+{
+	PS_OUTPUT output = (PS_OUTPUT)0;
+	output = NormalPrc(input, iPower);
+	output.mColor *= tex2D(DiffuseSampler, input.mTexCoord);
 
 	return output;
 }
@@ -107,6 +122,30 @@ technique Tech0
 	pass P0
 	{
 		VertexShader = compile vs_3_0 VtxPrc();
-		PixelShader = compile ps_3_0 PxlPrc();
+		PixelShader = compile ps_3_0 PxlPrc0();
+	}
+
+	pass P1
+	{
+		VertexShader = compile vs_3_0 VtxPrc();
+		PixelShader = compile ps_3_0 PxlPrc1();
+	}
+
+	pass P2
+	{
+		VertexShader = compile vs_3_0 VtxPrc();
+		PixelShader = compile ps_3_0 PxlPrc2(1.2);
+	}
+
+	pass P3
+	{
+		VertexShader = compile vs_3_0 VtxPrc();
+		PixelShader = compile ps_3_0 PxlPrc2(2.2);
+	}
+
+	pass P4
+	{
+		VertexShader = compile vs_3_0 VtxPrc();
+		PixelShader = compile ps_3_0 PxlPrc2(4.2);
 	}
 }

@@ -6,7 +6,7 @@ protected:
 
 public:
 	CBaseClass();
-	~CBaseClass();
+	virtual ~CBaseClass();
 
 	virtual HRESULT Create(LPDIRECT3DDEVICE9 pdev);
 	virtual void Release(){};

@@ -30,7 +30,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	SetCamera();
 
 	m_pGameInstance = NULL;
-	m_pGameInstance = new CEx12_EdgeDetection();
+	m_pGameInstance = new CEx07_NormalMapping();
 
 	if (m_pGameInstance)
 		m_pGameInstance->Create(m_pdev);

@@ -1,11 +1,11 @@
 //---------------------------------------------------------------------------------------------------
 //
-//Description : Bump Mapping 04
+//Description : Bump Mapping 05
 //
 //---------------------------------------------------------------------------------------------------
 
 #pragma once
-class CShader_3dapi_03_31 : public CBaseClass
+class CShader_3dapi_03_32 : public CBaseClass
 {
 	struct Vertex
 	{
@@ -14,9 +14,10 @@ class CShader_3dapi_03_31 : public CBaseClass
 		float u, v;
 
 		Vertex(){}
-		Vertex(float _x, float _y, float _z, float _u, float _v)
+		Vertex(float _x, float _y, float _z, float _nx, float _ny, float _nz, float _u, float _v)
 		{
 			p.x = _x; p.y = _y; p.z = _z;
+			n.x = _nx; n.y = _ny; n.z = _nz;
 			u = _u, v = _v;
 		}
 
@@ -26,17 +27,15 @@ class CShader_3dapi_03_31 : public CBaseClass
 	LPD3DXEFFECT m_pShader;
 
 	int m_iVertexNum;
-	Vertex*	m_pVertices;
+	Vertex	m_pVertices[4];
 	LPDIRECT3DVERTEXDECLARATION9	m_pFVF;
 
 	LPDIRECT3DTEXTURE9		m_pDiffuseTex;
 	LPDIRECT3DTEXTURE9		m_pNormalTex;
 
-	D3DXVECTOR3	m_vLightDir;
-
 public:
-	CShader_3dapi_03_31();
-	~CShader_3dapi_03_31();
+	CShader_3dapi_03_32();
+	~CShader_3dapi_03_32();
 
 	virtual HRESULT Create(LPDIRECT3DDEVICE9 pdev);
 	virtual void Release();

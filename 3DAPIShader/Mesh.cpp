@@ -50,7 +50,7 @@ HRESULT CMesh::Create(LPDIRECT3DDEVICE9 pdev, char* xFileName, char* szPath)
 				, D3DPOOL_MANAGED
 				, D3DX_DEFAULT
 				, D3DX_DEFAULT
-				, 0x00FFFFFF
+				, 0 /*0x00FFFFFF*/
 				, NULL
 				, NULL
 				, &m_pTextures[i]);

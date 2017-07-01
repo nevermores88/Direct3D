@@ -172,7 +172,7 @@ void CShader_3dapi_03_36::Update()
 		D3DXMATRIX	mtRotZ;
 
 		static float fRot = 0.0f;
-		//fRot += 0.3f;
+		fRot += 0.3f;
 		FLOAT	fAngle = D3DXToRadian(fRot);
 		D3DXMatrixRotationY(&mtTM, fAngle*3.f);
 		D3DXMatrixRotationZ(&mtRotZ, fAngle*2.f);

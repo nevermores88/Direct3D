@@ -31,10 +31,10 @@ HRESULT CEx05_02Billboard::Create(LPDIRECT3DDEVICE9 pdev)
 	m_pCam = new CEx05_02Camera();
 
 	//텍스쳐 생성
-	D3DXCreateTextureFromFile(m_pdev, L"Ex05_02/tree01S.dds", &m_pTexBillboard[0]);
-	D3DXCreateTextureFromFile(m_pdev, L"Ex05_02/tree02S.dds", &m_pTexBillboard[1]);
-	D3DXCreateTextureFromFile(m_pdev, L"Ex05_02/tree35S.dds", &m_pTexBillboard[2]);
-	D3DXCreateTextureFromFile(m_pdev, L"Ex05_02/tex.jpg", &m_pTexBillboard[3]);
+	D3DXCreateTextureFromFile(m_pdev, "Ex05_02/tree01S.dds", &m_pTexBillboard[0]);
+	D3DXCreateTextureFromFile(m_pdev, "Ex05_02/tree02S.dds", &m_pTexBillboard[1]);
+	D3DXCreateTextureFromFile(m_pdev, "Ex05_02/tree35S.dds", &m_pTexBillboard[2]);
+	D3DXCreateTextureFromFile(m_pdev, "Ex05_02/tex.jpg", &m_pTexBillboard[3]);
 
 	//최초의 마우스 위치 보관
 	POINT pt;
@@ -291,8 +291,8 @@ void CEx05_02Water::Update()
 
 HRESULT CEx05_02Water::LoadTexture()
 {
-	D3DXCreateTextureFromFile(m_pdev, L"Ex05_02/water1.bmp", &m_pTex[0]);
-	D3DXCreateTextureFromFile(m_pdev, L"Ex05_02/water2.bmp", &m_pTex[1]);
+	D3DXCreateTextureFromFile(m_pdev, "Ex05_02/water1.bmp", &m_pTex[0]);
+	D3DXCreateTextureFromFile(m_pdev, "Ex05_02/water2.bmp", &m_pTex[1]);
 
 	return S_OK;
 }

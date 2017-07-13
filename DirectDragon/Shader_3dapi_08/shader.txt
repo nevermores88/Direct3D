@@ -1,0 +1,46 @@
+//
+// Shader Example.
+// Copyleft (c) 2007 Heesung Oh(Galic Studio). All rights Not reserved.
+////////////////////////////////////////////////////////////////////////////
+
+
+// Output Vertex Processing(Output Register)
+struct SvsOut
+{
+    float4 Pos : POSITION;	// oPos
+	float4 Dif : COLOR0;	// oD0
+};
+
+
+matrix WorldMatrix;			// World Matrix
+matrix ViewMatrix;			// View Matrix
+matrix ProjMatrix;			// Projection Matrix
+
+
+struct VS_INPUT
+{
+	vector position : POSITION;
+	vector diffuse : COLOR;
+};
+
+struct VS_OUTPUT
+{
+	vector position : POSITION;
+	vector diffuse : COLOR;
+};
+
+VS_OUTPUT Main(VS_INPUT input)
+{
+	VS_OUTPUT output = (VS_OUTPUT)0;
+	/*vector p;
+
+	p = input.position;
+
+	p = mul(p, WorldMatrix);
+	p = mul(p, ViewMatrix);
+	p = mul(p, ProjMatrix);
+
+	output.diffuse = input.diffuse;*/
+
+	return output;
+}

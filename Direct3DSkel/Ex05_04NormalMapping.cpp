@@ -36,11 +36,11 @@ HRESULT CEx05_04NormalMapping::Create(LPDIRECT3DDEVICE9 pdev)
 
 	//텍스쳐 생성
 	/// 벽면 텍스처
-	if (FAILED(D3DXCreateTextureFromFile(m_pdev, L"Ex05_04/env2.bmp", &m_pTexDiffuse)))
+	if (FAILED(D3DXCreateTextureFromFile(m_pdev, "Ex05_04/env2.bmp", &m_pTexDiffuse)))
 		return E_FAIL;
 
 	/// 법선맵
-	if (FAILED(D3DXCreateTextureFromFile(m_pdev, L"Ex05_04/normal.bmp", &m_pTexNormal)))
+	if (FAILED(D3DXCreateTextureFromFile(m_pdev, "Ex05_04/normal.bmp", &m_pTexNormal)))
 		return E_FAIL;
 
 

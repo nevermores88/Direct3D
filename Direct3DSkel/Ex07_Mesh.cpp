@@ -17,7 +17,7 @@ HRESULT CEx07_Mesh::Create(LPDIRECT3DDEVICE9 pdev)
 
 	LPD3DXBUFFER pMtrlBuffer;
 	//용책에는 D3DXMESH_MANAGED 이걸로 세팅되어있음
-	if (FAILED(D3DXLoadMeshFromX(L"Ex07_Mesh/Tiger.x", D3DXMESH_SYSTEMMEM, m_pdev, NULL,
+	if (FAILED(D3DXLoadMeshFromX("Ex07_Mesh/Tiger.x", D3DXMESH_SYSTEMMEM, m_pdev, NULL,
 		&pMtrlBuffer, NULL, &m_dwNumMaterials, &m_pMesh)))
 	{
 		return E_FAIL;
@@ -54,7 +54,7 @@ HRESULT CEx07_Mesh::Create(LPDIRECT3DDEVICE9 pdev)
 
 				if (FAILED(D3DXCreateTextureFromFileA(m_pdev, strTexture, &m_pTextures[i])))
 				{
-					::MessageBox(NULL, L"Couldn't find texture map", L"Meshes.exe", MB_OK);
+					::MessageBox(NULL, "Couldn't find texture map", "Meshes.exe", MB_OK);
 				}
 			}
 		}

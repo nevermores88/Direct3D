@@ -1,0 +1,8 @@
+//matrix ViewProjMatrix;
+
+float4 Main(float3 Pos : POSITION) : POSITION
+{
+	
+	return float4(Pos, 1);
+	//return mul(Pos, ViewProjMatrix);
+}

@@ -13,6 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Chapter07">
+      <UniqueIdentifier>{5066c546-59fc-4aa7-b4b7-5fb73bc0ffa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Chapter07">
+      <UniqueIdentifier>{0109712c-a1cf-4158-b79a-1f21b25fcdd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Chapter06">
+      <UniqueIdentifier>{50e45444-c56c-4308-9128-6919012038cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Chapter05">
+      <UniqueIdentifier>{06bc956b-afe5-4ce7-9ffe-5b985643d242}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Chapter04">
+      <UniqueIdentifier>{a994aaa6-4c6a-411f-a2a6-00f7a5fc2c90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -72,6 +87,18 @@
     <ClInclude Include="Ex05_07Skinning.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Skel_07_01_Terrain.h">
+      <Filter>헤더 파일\Chapter07</Filter>
+    </ClInclude>
+    <ClInclude Include="Skel_Camera.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Skel_ZFrustum.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Skel_07_03_Terrain_Frustum.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -120,6 +147,18 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Ex05_07Skinning.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Skel_07_01_Terrain.cpp">
+      <Filter>소스 파일\Chapter07</Filter>
+    </ClCompile>
+    <ClCompile Include="Skel_Camera.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Skel_ZFrustum.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Skel_07_03_Terrain_Frustum.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

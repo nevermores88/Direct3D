@@ -15,9 +15,9 @@ HRESULT CEx06_Textures::Create(LPDIRECT3DDEVICE9 pdev)
 {
 	CBaseClass::Create(pdev);
 
-	if (FAILED(D3DXCreateTextureFromFile(pdev, L"Ex06_Textures/crate.jpg", &m_pTex)))
+	if (FAILED(D3DXCreateTextureFromFile(pdev, "Ex06_Textures/crate.jpg", &m_pTex)))
 	{
-		::MessageBox(NULL, L"Couldn't find banna.bmp", L"Ex06_Textures", MB_OK);
+		::MessageBox(NULL, "Couldn't find banna.bmp", "Ex06_Textures", MB_OK);
 		return E_FAIL;
 	}
 

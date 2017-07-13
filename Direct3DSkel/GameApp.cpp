@@ -13,6 +13,9 @@
 #include "Ex05_06Animation.h"
 #include "Ex05_07Skinning.h"
 
+#include "Skel_07_01_Terrain.h"
+#include "Skel_07_03_Terrain_Frustum.h"
+
 CGameApp* CGameApp::m_pGameApp = NULL;
 
 CGameApp::CGameApp()
@@ -29,7 +32,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	pGameInstance = new CEx05_05Hierachy();
+	pGameInstance = new CSkel_07_03_Terrain_Frustum();
 	pGameInstance->Create(m_pdev);
 
 	return ret;

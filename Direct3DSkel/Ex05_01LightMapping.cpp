@@ -37,10 +37,10 @@ HRESULT CEx05_01LightMapping::Create(LPDIRECT3DDEVICE9 pdev)
 	m_pVB->Unlock();
 
 	//텍스처 정보 생성
-	if (FAILED(D3DXCreateTextureFromFile(m_pdev, L"Ex05_01/env2.bmp", &m_pTex0)))
+	if (FAILED(D3DXCreateTextureFromFile(m_pdev, "Ex05_01/env2.bmp", &m_pTex0)))
 		return E_FAIL;
 
-	if (FAILED(D3DXCreateTextureFromFile(m_pdev, L"Ex05_01/spotlite.bmp", &m_pTex1)))
+	if (FAILED(D3DXCreateTextureFromFile(m_pdev, "Ex05_01/spotlite.bmp", &m_pTex1)))
 		return E_FAIL;
 
 	return S_OK;

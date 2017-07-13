@@ -59,7 +59,7 @@ HRESULT CEx05_07Skinning::Create(LPDIRECT3DDEVICE9 pdev)
 	m_pVB->Unlock();
 
 	//텍스쳐 생성
-	if (FAILED(D3DXCreateTextureFromFile(m_pdev, L"Ex05_07/lake.bmp", &m_pTex)))
+	if (FAILED(D3DXCreateTextureFromFile(m_pdev, "Ex05_07/lake.bmp", &m_pTex)))
 		return E_FAIL;
 
 	return S_OK;

@@ -31,10 +31,10 @@ HRESULT CEx05_03Billboard::Create(LPDIRECT3DDEVICE9 pdev)
 	m_pCam = new CEx05_02Camera();
 
 	//텍스쳐 생성
-	D3DXCreateTextureFromFile(m_pdev, L"Ex05_03/tree01S.dds", &m_pTexBillboard[0]);
-	D3DXCreateTextureFromFile(m_pdev, L"Ex05_03/tree02S.dds", &m_pTexBillboard[1]);
-	D3DXCreateTextureFromFile(m_pdev, L"Ex05_03/tree35S.dds", &m_pTexBillboard[2]);
-	D3DXCreateTextureFromFile(m_pdev, L"Ex05_03/explosion.jpg", &m_pTexBillboard[3]);
+	D3DXCreateTextureFromFile(m_pdev, "Ex05_03/tree01S.dds", &m_pTexBillboard[0]);
+	D3DXCreateTextureFromFile(m_pdev, "Ex05_03/tree02S.dds", &m_pTexBillboard[1]);
+	D3DXCreateTextureFromFile(m_pdev, "Ex05_03/tree35S.dds", &m_pTexBillboard[2]);
+	D3DXCreateTextureFromFile(m_pdev, "Ex05_03/explosion.jpg", &m_pTexBillboard[3]);
 
 	//최초의 마우스 위치 보관
 	POINT pt;

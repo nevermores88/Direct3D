@@ -20,7 +20,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -98,6 +98,10 @@
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameCore.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Skel_07_01_Terrain.h" />
+    <ClInclude Include="Skel_07_03_Terrain_Frustum.h" />
+    <ClInclude Include="Skel_Camera.h" />
+    <ClInclude Include="Skel_ZFrustum.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -117,6 +121,10 @@
     <ClCompile Include="Ex08_IndexBuffer.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="GameCore.cpp" />
+    <ClCompile Include="Skel_07_01_Terrain.cpp" />
+    <ClCompile Include="Skel_07_03_Terrain_Frustum.cpp" />
+    <ClCompile Include="Skel_Camera.cpp" />
+    <ClCompile Include="Skel_ZFrustum.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

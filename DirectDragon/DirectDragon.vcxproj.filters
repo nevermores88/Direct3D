@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Temp">
+      <UniqueIdentifier>{2916decb-eb00-41cf-87b4-d31921c6460f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Temp">
+      <UniqueIdentifier>{d02c5164-81e2-4fed-9306-1790262027c3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectDragon.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCore.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex03_Cube.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex04_Color.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex05_Light01.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex06_Texture01.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex07_Blending01.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex09_Text01.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex09_Text02.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex09_Text03.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex07_Blending02.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex08_Stencil01.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dUtility.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex03_Teapot.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex03_Create.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex05_Directional.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex05_Point.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex05_Spot.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalDefine.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex06_TexCube.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex06_AddressModes.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex10_CreateMesh.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex11_XFile.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex11_PMesh.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex11_BoundingVolumes.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundingBox.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundingSphere.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex12_Camera.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex13_Terrain.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex14_Particle.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex17_Diffuse.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex17_Toon.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex18_MultiTexture.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Temp.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseClass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="IRenderTarget.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderTarget.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex17_ToonOutline.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex19_Effect01.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex19_Effect02.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex19_Effect03.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_01.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_02.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_03.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_05.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_06.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_07.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_08.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_09.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_10.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_11.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_12.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_13.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_14.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_15.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_16.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_17.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_18.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_19.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_19_1.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_20_1.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_21_1.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_22.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_23.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_24.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_25.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_26.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_27.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_28.h">
+      <Filter>헤더 파일\Temp</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectDragon.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCore.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex03_Cube.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex04_Color.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex05_Light01.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex06_Texture01.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex07_Blending01.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex09_Text01.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex09_Text02.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex09_Text03.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex07_Blending02.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex08_Stencil01.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dUtility.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex03_Teapot.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex03_Create.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex05_Directional.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex05_Point.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex05_Spot.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex06_TexCube.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex06_AddressModes.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex10_CreateMesh.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex11_XFile.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex11_PMesh.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex11_BoundingVolumes.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundingBox.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundingSphere.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex12_Camera.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex13_Terrain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystem.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex14_Particle.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex17_Diffuse.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex17_Toon.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex18_MultiTexture.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Temp.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseClass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="IRenderTarget.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderTarget.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex17_ToonOutline.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex19_Effect01.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex19_Effect02.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex19_Effect03.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_01.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_02.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_03.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_05.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_06.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_07.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_08.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_09.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_10.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_11.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_12.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_13.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_14.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_15.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_16.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_17.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_18.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_19.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_19_1.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_20_1.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_21_1.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_22.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_23.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_24.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_25.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_26.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_27.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_28.cpp">
+      <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DirectDragon.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="DirectDragon.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

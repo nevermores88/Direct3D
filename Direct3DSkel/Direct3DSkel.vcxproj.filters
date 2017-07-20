@@ -96,8 +96,23 @@
     <ClInclude Include="Skel_ZFrustum.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Skel_07_03_Terrain_Frustum.h">
+    <ClInclude Include="Dib.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Skel_QuadTree.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Skel_Terrain.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Skel_07_04_Terrain_QuadTree.h">
+      <Filter>헤더 파일\Chapter07</Filter>
+    </ClInclude>
+    <ClInclude Include="Skel_07_03_Terrain_Frustum.h">
+      <Filter>헤더 파일\Chapter07</Filter>
+    </ClInclude>
+    <ClInclude Include="Skel_07_05_Terrain_QuadTreeCulling.h">
+      <Filter>헤더 파일\Chapter07</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -158,8 +173,23 @@
     <ClCompile Include="Skel_ZFrustum.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Skel_07_03_Terrain_Frustum.cpp">
+    <ClCompile Include="Dib.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Skel_QuadTree.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Skel_Terrain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Skel_07_03_Terrain_Frustum.cpp">
+      <Filter>소스 파일\Chapter07</Filter>
+    </ClCompile>
+    <ClCompile Include="Skel_07_04_Terrain_QuadTree.cpp">
+      <Filter>소스 파일\Chapter07</Filter>
+    </ClCompile>
+    <ClCompile Include="Skel_07_05_Terrain_QuadTreeCulling.cpp">
+      <Filter>소스 파일\Chapter07</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

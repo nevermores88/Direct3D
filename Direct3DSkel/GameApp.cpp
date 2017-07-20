@@ -15,6 +15,8 @@
 
 #include "Skel_07_01_Terrain.h"
 #include "Skel_07_03_Terrain_Frustum.h"
+#include "Skel_07_04_Terrain_QuadTree.h"
+#include "Skel_07_05_Terrain_QuadTreeCulling.h"
 
 CGameApp* CGameApp::m_pGameApp = NULL;
 
@@ -32,7 +34,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	pGameInstance = new CSkel_07_03_Terrain_Frustum();
+	pGameInstance = new CSkel_07_05_Terrain_QuadTreeCulling();
 	pGameInstance->Create(m_pdev);
 
 	return ret;

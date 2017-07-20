@@ -16,7 +16,7 @@ void CEx13_Terrain::Create(LPDIRECT3DDEVICE9 pdev, DWORD dwExType)
 	m_dwExType = dwExType;
 	m_pdev = pdev;
 
-	D3DXVECTOR3 lightDir(0.0f, 1.0f, 0.0f);
+	D3DXVECTOR3 lightDir(1.0f, 1.0f, 1.0f);
 	m_pTerrain = new CTerrain();
 	if (!m_pTerrain)
 		return;

@@ -84,6 +84,7 @@
   <ItemGroup>
     <ClInclude Include="BaseClass.h" />
     <ClInclude Include="d3dUtility.h" />
+    <ClInclude Include="Dib.h" />
     <ClInclude Include="Direct3DSkel.h" />
     <ClInclude Include="Ex05_01LightMapping.h" />
     <ClInclude Include="Ex05_02Billboard.h" />
@@ -100,7 +101,13 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Skel_07_01_Terrain.h" />
     <ClInclude Include="Skel_07_03_Terrain_Frustum.h" />
+    <ClInclude Include="Skel_07_04_Terrain_QuadTree.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Skel_07_05_Terrain_QuadTreeCulling.h" />
     <ClInclude Include="Skel_Camera.h" />
+    <ClInclude Include="Skel_QuadTree.h" />
+    <ClInclude Include="Skel_Terrain.h" />
     <ClInclude Include="Skel_ZFrustum.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -108,6 +115,7 @@
   <ItemGroup>
     <ClCompile Include="BaseClass.cpp" />
     <ClCompile Include="d3dUtility.cpp" />
+    <ClCompile Include="Dib.cpp" />
     <ClCompile Include="Direct3DSkel.cpp" />
     <ClCompile Include="Ex05_01LightMapping.cpp" />
     <ClCompile Include="Ex05_02Billboard.cpp" />
@@ -123,7 +131,13 @@
     <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="Skel_07_01_Terrain.cpp" />
     <ClCompile Include="Skel_07_03_Terrain_Frustum.cpp" />
+    <ClCompile Include="Skel_07_04_Terrain_QuadTree.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Skel_07_05_Terrain_QuadTreeCulling.cpp" />
     <ClCompile Include="Skel_Camera.cpp" />
+    <ClCompile Include="Skel_QuadTree.cpp" />
+    <ClCompile Include="Skel_Terrain.cpp" />
     <ClCompile Include="Skel_ZFrustum.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

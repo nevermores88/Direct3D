@@ -216,6 +216,9 @@
     <ClInclude Include="Shader_3dapi_03_38.h">
       <Filter>헤더 파일\Chapter03</Filter>
     </ClInclude>
+    <ClInclude Include="Shader_3dapi_03_39.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -397,6 +400,9 @@
     </ClCompile>
     <ClCompile Include="Shader_3dapi_03_38.cpp">
       <Filter>소스 파일\Chapter03</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_03_39.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

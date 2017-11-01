@@ -63,6 +63,7 @@
 //Environment Mapping
 #include "Shader_3dapi_03_37.h"
 #include "Shader_3dapi_03_38.h"
+#include "Shader_3dapi_03_39.h"
 
 #include "TestShader.h"
 
@@ -82,7 +83,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	m_pGameInstance = new CShader_3dapi_03_38();
+	m_pGameInstance = new CShader_3dapi_03_39();
 
 	if (m_pGameInstance)
 		m_pGameInstance->Create(m_pdev);

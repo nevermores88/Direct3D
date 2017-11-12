@@ -1,7 +1,6 @@
 //---------------------------------------------------------------------------------------------------
 //
-//Description : Environment Mapping 01
-//Original File : ht25_env1_sphere1.zip
+//Description : Environment Mapping 05
 //
 //---------------------------------------------------------------------------------------------------
 
@@ -9,7 +8,7 @@
 
 class CMesh;
 
-class CShader_3dapi_03_37 : public CBaseClass
+class CShader_3dapi_03_41 : public CBaseClass
 {
 	struct Vertex
 	{
@@ -30,19 +29,29 @@ class CShader_3dapi_03_37 : public CBaseClass
 	LPDIRECT3DVERTEXDECLARATION9	m_pFVF;
 
 	CMesh*	m_pMesh;
-	LPDIRECT3DTEXTURE9		m_pEnvTex;
+	CMesh*	m_pSkyBox;
+	LPDIRECT3DCUBETEXTURE9		m_pCubeTex;
 
 	D3DXMATRIX m_mtWorld;
 	D3DXMATRIX m_mtRot;
 
+	LPD3DXRenderToEnvMap	m_pRenderEnvMap;
+
+	int m_iEnvOpt;
+
 public:
-	CShader_3dapi_03_37();
-	~CShader_3dapi_03_37();
+	CShader_3dapi_03_41();
+	~CShader_3dapi_03_41();
 
 	virtual HRESULT Create(LPDIRECT3DDEVICE9 pdev);
 	virtual void Release();
 
 	virtual void Render();
 	virtual void Update();
+
+	void SetupCubeViewMatrix(D3DXMATRIX* pOut, DWORD dwFace);
+
+	void RenderScene();
+	void RenderScene(D3DXMATRIX* pView, D3DXMATRIX* pProj);
 };
 

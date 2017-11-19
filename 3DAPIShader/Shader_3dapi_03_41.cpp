@@ -17,7 +17,7 @@ HRESULT CShader_3dapi_03_41::Create(LPDIRECT3DDEVICE9 pdev)
 
 	m_iEnvOpt = 0;
 
-	HRESULT hr;
+	HRESULT hr = 0;
 
 	m_pShader = LoadShader("Ex03_41/Shader.fx");
 	if (!m_pShader)
@@ -241,7 +241,7 @@ void CShader_3dapi_03_41::SetupCubeViewMatrix(D3DXMATRIX* pOut, DWORD dwFace)
 		vUpDir = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
 		break;
 	case D3DCUBEMAP_FACE_NEGATIVE_X:
-		vLookDir = D3DXVECTOR3(1.0f, 0.0f, 0.0f);
+		vLookDir = D3DXVECTOR3(-1.0f, 0.0f, 0.0f);
 		vUpDir = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
 		break;
 	case D3DCUBEMAP_FACE_POSITIVE_Y:

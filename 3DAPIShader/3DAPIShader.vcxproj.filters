@@ -25,6 +25,12 @@
     <Filter Include="헤더 파일\Chapter02">
       <UniqueIdentifier>{1f3425bc-93e4-4bff-9cf1-4f32fbf4500d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\Chapter01">
+      <UniqueIdentifier>{9336ff45-469e-4847-997d-5e89e17c2378}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Chapter01">
+      <UniqueIdentifier>{8ced3c17-5fb5-4f7f-82b8-57d906778bba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -228,6 +234,12 @@
     <ClInclude Include="Shader_3dapi_03_42.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Shader_3dapi_01_01.h">
+      <Filter>헤더 파일\Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_01_02.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -420,6 +432,12 @@
       <Filter>소스 파일\Chapter03</Filter>
     </ClCompile>
     <ClCompile Include="Shader_3dapi_03_42.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_01_01.cpp">
+      <Filter>소스 파일\Chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_01_02.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

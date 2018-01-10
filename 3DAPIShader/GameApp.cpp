@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "GameApp.h"
 
+//Vertex Shader
+#include "Shader_3dapi_01_01.h"
+#include "Shader_3dapi_01_02.h"
+
 #include "Shader_3dapi_02_12.h"
 #include "Shader_3dapi_02_18.h"
 #include "Shader_3dapi_02_19.h"
@@ -85,7 +89,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	m_pGameInstance = new CShader_3dapi_03_41();
+	m_pGameInstance = new CShader_3dapi_01_02();
 
 	if (m_pGameInstance)
 		m_pGameInstance->Create(m_pdev);

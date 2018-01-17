@@ -10,6 +10,12 @@
 #include "Shader_3dapi_01_04.h"
 #include "Shader_3dapi_01_05.h"
 
+//Transform
+#include "Shader_3dapi_01_06.h"
+
+//Const
+#include "Shader_3dapi_01_07.h"
+
 #include "Shader_3dapi_02_12.h"
 #include "Shader_3dapi_02_18.h"
 #include "Shader_3dapi_02_19.h"
@@ -94,7 +100,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	m_pGameInstance = new CShader_3dapi_01_04();
+	m_pGameInstance = new CShader_3dapi_01_07();
 
 	if (m_pGameInstance)
 		m_pGameInstance->Create(m_pdev);

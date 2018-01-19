@@ -16,7 +16,8 @@ void CEx13_Terrain::Create(LPDIRECT3DDEVICE9 pdev, DWORD dwExType)
 	m_dwExType = dwExType;
 	m_pdev = pdev;
 
-	D3DXVECTOR3 lightDir(1.0f, 1.0f, 1.0f);
+	D3DXVECTOR3 lightDir(0.0f, 1.0f, 0.0f);
+
 	m_pTerrain = new CTerrain();
 	if (!m_pTerrain)
 		return;
@@ -40,6 +41,9 @@ void CEx13_Terrain::OnRender()
 {
 	if (m_pdev)
 	{
+		m_pdev->SetSamplerState(0, D3DSAMP_ADDRESSU, D3DTADDRESS_CLAMP);
+		m_pdev->SetSamplerState(0, D3DSAMP_ADDRESSV, D3DTADDRESS_CLAMP);
+
 		m_pdev->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
 		m_pdev->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
 		m_pdev->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);

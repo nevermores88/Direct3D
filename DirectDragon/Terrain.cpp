@@ -317,7 +317,7 @@ bool CTerrain::LightTerrain(D3DXVECTOR3* dirToLight)
 	m_pTex->UnlockRect(0);
 
 	return true;
-}
+} 
 
 float CTerrain::GetHeight(float x, float z)
 {
@@ -341,13 +341,13 @@ float CTerrain::GetHeight(float x, float z)
 
 	float height = 0.0f;
 
-	if (dz < 1.0f - dx)
+	if (dz < 1.0f - dx)				//위쪽 삼각형
 	{
 		float uy = B - A;
 		float vy = C - A;
 		height = A + d3d::Lerp(0.0f, uy, dx) + d3d::Lerp(0.0f, vy, dz);
 	}
-	else
+	else									//아래쪽 삼각형
 	{
 		float uy = C - D;
 		float vy = B - D;

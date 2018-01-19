@@ -97,7 +97,11 @@ void CShader_3dapi_01_08::Render()
 {
 	if (m_pdev)
 	{
+		D3DXMATRIX mtWorld;
+		D3DXMATRIX mtView;
+		D3DXMATRIX mtProj;
 
+		D3DXMatrixIdentity()
 	}
 }
 

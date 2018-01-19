@@ -255,6 +255,18 @@
     <ClInclude Include="Shader_3dapi_01_06.h">
       <Filter>헤더 파일\Chapter01</Filter>
     </ClInclude>
+    <ClInclude Include="Shader_3dapi_01_08.h">
+      <Filter>헤더 파일\Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_01_09.h">
+      <Filter>헤더 파일\Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_01_10.h">
+      <Filter>헤더 파일\Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_3dapi_01_11.h">
+      <Filter>헤더 파일\Chapter01</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -468,6 +480,18 @@
       <Filter>소스 파일\Chapter01</Filter>
     </ClCompile>
     <ClCompile Include="Shader_3dapi_01_06.cpp">
+      <Filter>소스 파일\Chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_01_08.cpp">
+      <Filter>소스 파일\Chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_01_09.cpp">
+      <Filter>소스 파일\Chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_01_10.cpp">
+      <Filter>소스 파일\Chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_3dapi_01_11.cpp">
       <Filter>소스 파일\Chapter01</Filter>
     </ClCompile>
   </ItemGroup>

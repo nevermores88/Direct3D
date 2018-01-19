@@ -92,6 +92,9 @@ PS_OUTPUT PxlPrc(PS_INPUT input)
 		output.mColor = texCUBE(CubeSampler, F);
 	//output.mColor = texCUBE(CubeSampler, input.mReflection);
 
+	//¹Ý»ç R = reflect(-E, N)
+	//±¼Àý F = refract(-E, N, k);             k = n1/n2
+
 	output.mColor.a = 1;
 
 	return output;

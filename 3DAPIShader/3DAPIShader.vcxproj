@@ -102,6 +102,10 @@
     <ClInclude Include="Shader_3dapi_01_05.h" />
     <ClInclude Include="Shader_3dapi_01_06.h" />
     <ClInclude Include="Shader_3dapi_01_07.h" />
+    <ClInclude Include="Shader_3dapi_01_08.h" />
+    <ClInclude Include="Shader_3dapi_01_09.h" />
+    <ClInclude Include="Shader_3dapi_01_10.h" />
+    <ClInclude Include="Shader_3dapi_01_11.h" />
     <ClInclude Include="Shader_3dapi_02_18.h" />
     <ClInclude Include="Shader_3dapi_02_19.h" />
     <ClInclude Include="Shader_3dapi_02_20.h" />
@@ -176,6 +180,10 @@
     <ClCompile Include="Shader_3dapi_01_05.cpp" />
     <ClCompile Include="Shader_3dapi_01_06.cpp" />
     <ClCompile Include="Shader_3dapi_01_07.cpp" />
+    <ClCompile Include="Shader_3dapi_01_08.cpp" />
+    <ClCompile Include="Shader_3dapi_01_09.cpp" />
+    <ClCompile Include="Shader_3dapi_01_10.cpp" />
+    <ClCompile Include="Shader_3dapi_01_11.cpp" />
     <ClCompile Include="Shader_3dapi_02_18.cpp" />
     <ClCompile Include="Shader_3dapi_02_19.cpp" />
     <ClCompile Include="Shader_3dapi_02_20.cpp" />

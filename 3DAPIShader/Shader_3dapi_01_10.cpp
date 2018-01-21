@@ -13,7 +13,7 @@ CShader_3dapi_01_10::~CShader_3dapi_01_10()
 
 HRESULT CShader_3dapi_01_10::Create(LPDIRECT3DDEVICE9 pdev)
 {
-
+	return S_OK;
 }
 
 void CShader_3dapi_01_10::Release()

@@ -1,12 +1,12 @@
 //---------------------------------------------------------------------------------------------------
 //
-//Description : Texture 03
-//Original File : s0v_06_tex_env.zip
+//Description :  Lighting 01
+//Original File : s0v_07_1lambert.zip
 //
 //---------------------------------------------------------------------------------------------------
 
 #pragma once
-class CShader_3dapi_01_10 : public CBaseClass
+class CShader_3dapi_01_12 : public CBaseClass
 {
 	struct Vertex
 	{
@@ -26,12 +26,14 @@ class CShader_3dapi_01_10 : public CBaseClass
 	LPDIRECT3DVERTEXSHADER9	m_pVertexShader;
 	LPDIRECT3DVERTEXDECLARATION9	m_pFVF;
 
-	LPD3DXMESH	m_pMesh;
-	LPDIRECT3DTEXTURE9 m_pTex;
+	D3DXMATRIX m_mtWorld;
+
+	int m_iVertexNum;
+	Vertex* m_pVertices;
 
 public:
-	CShader_3dapi_01_10();
-	~CShader_3dapi_01_10();
+	CShader_3dapi_01_12();
+	~CShader_3dapi_01_12();
 
 	virtual HRESULT Create(LPDIRECT3DDEVICE9 pdev);
 	virtual void Release();

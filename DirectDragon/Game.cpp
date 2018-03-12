@@ -52,7 +52,7 @@ void CGame::OnInit()
 
 	m_dwExType = en_Shader_3dapi_18;
 	m_pClasses = NULL;
-	m_pClasses = new	CEx13_Terrain();
+	m_pClasses = new	CEx15_Picking();
 	m_pClasses->Create(m_pdev, 0);
 }
 

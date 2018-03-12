@@ -131,8 +131,11 @@ HRESULT CField::Create(LPDIRECT3DDEVICE9 pDev, char* sRaw, char* sTexDif, char* 
 	//3. 법선 벡터 설정
 	SetupNormal();
 
-	D3DXCreateTextureFromFile(m_pdev, sTexDif, &m_pTxDif);
-	D3DXCreateTextureFromFile(m_pdev, sTexDet, &m_pTxDet);
+	if (sTexDif)
+		D3DXCreateTextureFromFile(m_pdev, sTexDif, &m_pTxDif);
+
+	if (sTexDet)
+		D3DXCreateTextureFromFile(m_pdev, sTexDet, &m_pTxDet);
 }
 
 void CField::Release()
@@ -149,7 +152,7 @@ void CField::Render()
 {
 	if (m_pdev)
 	{
-		//m_pdev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+		m_pdev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 		m_pdev->SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
 		m_pdev->SetRenderState(D3DRS_ALPHATESTENABLE, FALSE);
 
@@ -160,7 +163,6 @@ void CField::Render()
 		m_pdev->SetSamplerState(1, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
 		m_pdev->SetSamplerState(1, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
 		m_pdev->SetSamplerState(1, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
-
 
 		m_pdev->SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
 		m_pdev->SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
@@ -178,9 +180,11 @@ void CField::Render()
 		m_pdev->SetTextureStageState(1, D3DTSS_ALPHAARG2, D3DTA_TEXTURE);
 		m_pdev->SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
 
+		if (m_pTxDif)
+			m_pdev->SetTexture(0, m_pTxDif);
 
-		m_pdev->SetTexture(0, m_pTxDif);
-		m_pdev->SetTexture(1, m_pTxDet);
+		if (m_pTxDet)
+			m_pdev->SetTexture(1, m_pTxDet);
 
 		m_pdev->SetFVF(Vertex::FVF);
 

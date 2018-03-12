@@ -39,6 +39,8 @@
 
 #include "Ex14_Particle.h"
 
+#include "Ex15_Picking.h"
+
 #include "Ex17_Diffuse.h"
 #include "Ex17_Toon.h"
 #include "Ex17_ToonOutline.h"

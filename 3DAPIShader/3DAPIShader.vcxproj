@@ -87,6 +87,7 @@
     <ClInclude Include="BaseClass.h" />
     <ClInclude Include="CameraManager.h" />
     <ClInclude Include="Field.h" />
+    <ClInclude Include="Filed_01_22.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameCore.h" />
     <ClInclude Include="Grid.h" />
@@ -108,6 +109,21 @@
     <ClInclude Include="Shader_3dapi_01_11.h" />
     <ClInclude Include="Shader_3dapi_01_12.h" />
     <ClInclude Include="Shader_3dapi_01_13.h" />
+    <ClInclude Include="Shader_3dapi_01_14.h" />
+    <ClInclude Include="Shader_3dapi_01_15.h" />
+    <ClInclude Include="Shader_3dapi_01_16.h" />
+    <ClInclude Include="Shader_3dapi_01_17.h" />
+    <ClInclude Include="Shader_3dapi_01_18.h" />
+    <ClInclude Include="Shader_3dapi_01_19.h" />
+    <ClInclude Include="Shader_3dapi_01_20.h" />
+    <ClInclude Include="Shader_3dapi_01_21.h" />
+    <ClInclude Include="Shader_3dapi_01_22.h" />
+    <ClInclude Include="Shader_3dapi_01_23.h" />
+    <ClInclude Include="Shader_3dapi_01_24.h" />
+    <ClInclude Include="Shader_3dapi_01_25.h" />
+    <ClInclude Include="Shader_3dapi_01_26.h" />
+    <ClInclude Include="Shader_3dapi_01_27.h" />
+    <ClInclude Include="Shader_3dapi_01_28.h" />
     <ClInclude Include="Shader_3dapi_02_18.h" />
     <ClInclude Include="Shader_3dapi_02_19.h" />
     <ClInclude Include="Shader_3dapi_02_20.h" />
@@ -168,6 +184,7 @@
     <ClCompile Include="BaseClass.cpp" />
     <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="Field.cpp" />
+    <ClCompile Include="Filed_01_22.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="GameCore.cpp" />
     <ClCompile Include="Grid.cpp" />
@@ -188,6 +205,20 @@
     <ClCompile Include="Shader_3dapi_01_11.cpp" />
     <ClCompile Include="Shader_3dapi_01_12.cpp" />
     <ClCompile Include="Shader_3dapi_01_13.cpp" />
+    <ClCompile Include="Shader_3dapi_01_14.cpp" />
+    <ClCompile Include="Shader_3dapi_01_15.cpp" />
+    <ClCompile Include="Shader_3dapi_01_16.cpp" />
+    <ClCompile Include="Shader_3dapi_01_17.cpp" />
+    <ClCompile Include="Shader_3dapi_01_18.cpp" />
+    <ClCompile Include="Shader_3dapi_01_19.cpp" />
+    <ClCompile Include="Shader_3dapi_01_20.cpp" />
+    <ClCompile Include="Shader_3dapi_01_22.cpp" />
+    <ClCompile Include="Shader_3dapi_01_23.cpp" />
+    <ClCompile Include="Shader_3dapi_01_24.cpp" />
+    <ClCompile Include="Shader_3dapi_01_25.cpp" />
+    <ClCompile Include="Shader_3dapi_01_26.cpp" />
+    <ClCompile Include="Shader_3dapi_01_27.cpp" />
+    <ClCompile Include="Shader_3dapi_01_28.cpp" />
     <ClCompile Include="Shader_3dapi_02_18.cpp" />
     <ClCompile Include="Shader_3dapi_02_19.cpp" />
     <ClCompile Include="Shader_3dapi_02_20.cpp" />
@@ -238,6 +269,7 @@
     <ClCompile Include="Shader_3dapi_03_40.cpp" />
     <ClCompile Include="Shader_3dapi_03_41.cpp" />
     <ClCompile Include="Shader_3dapi_03_42.cpp" />
+    <ClCompile Include="Shader_3dapi_01_21.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -1,17 +1,17 @@
 #include "stdafx.h"
-#include "Shader_3dapi_01_13.h"
+#include "Shader_3dapi_01_15.h"
 
 
-CShader_3dapi_01_13::CShader_3dapi_01_13()
+CShader_3dapi_01_15::CShader_3dapi_01_15()
 {
 }
 
 
-CShader_3dapi_01_13::~CShader_3dapi_01_13()
+CShader_3dapi_01_15::~CShader_3dapi_01_15()
 {
 }
 
-HRESULT CShader_3dapi_01_13::Create(LPDIRECT3DDEVICE9 pdev)
+HRESULT CShader_3dapi_01_15::Create(LPDIRECT3DDEVICE9 pdev)
 {
 	CBaseClass::Create(pdev);
 
@@ -31,7 +31,7 @@ HRESULT CShader_3dapi_01_13::Create(LPDIRECT3DDEVICE9 pdev)
 	LPD3DXBUFFER pShader = NULL;
 	LPD3DXBUFFER pError = NULL;
 
-	hr = D3DXAssembleShaderFromFile("Ex01_13/Shader.vsh", NULL, NULL, dwFlags, &pShader, &pError);
+	hr = D3DXAssembleShaderFromFile("Ex01_15/Shader.vsh", NULL, NULL, dwFlags, &pShader, &pError);
 
 	if (FAILED(hr))
 	{
@@ -111,7 +111,7 @@ HRESULT CShader_3dapi_01_13::Create(LPDIRECT3DDEVICE9 pdev)
 	return S_OK;
 }
 
-void CShader_3dapi_01_13::Release()
+void CShader_3dapi_01_15::Release()
 {
 	if (m_pVertexShader)
 	{
@@ -132,7 +132,7 @@ void CShader_3dapi_01_13::Release()
 	}
 }
 
-void CShader_3dapi_01_13::Render()
+void CShader_3dapi_01_15::Render()
 {
 	if (m_pdev)
 	{
@@ -186,7 +186,7 @@ void CShader_3dapi_01_13::Render()
 	}
 }
 
-void CShader_3dapi_01_13::Update()
+void CShader_3dapi_01_15::Update()
 {
 	if (m_pdev)
 	{

@@ -1,12 +1,12 @@
 //---------------------------------------------------------------------------------------------------
 //
-//Description :  Lighting 02
-//Original File : s0v_07_2phong.zip
+//Description :  Edge 01
+//Original File : s0v_10_toon3_edge1.zip
 //
 //---------------------------------------------------------------------------------------------------
 
 #pragma once
-class CShader_3dapi_01_13 : public CBaseClass
+class CShader_3dapi_01_28 : public CBaseClass
 {
 	struct Vertex
 	{
@@ -23,17 +23,22 @@ class CShader_3dapi_01_13 : public CBaseClass
 		enum { FVF = (D3DFVF_XYZ | D3DFVF_NORMAL) };
 	};
 
-	LPDIRECT3DVERTEXSHADER9	m_pVertexShader;
+	LPDIRECT3DVERTEXSHADER9	m_pVertexShaderForModel;
+	LPDIRECT3DVERTEXSHADER9	m_pVertexShaderForEdge;
 	LPDIRECT3DVERTEXDECLARATION9	m_pFVF;
+
+	LPDIRECT3DTEXTURE9 m_pTex;
 
 	D3DXMATRIX m_mtWorld;
 
-	int m_iVertexNum;
-	Vertex* m_pVertices;
+	DWORD m_iFaceNum;
+	DWORD m_iVertexNum;
+	LPDIRECT3DVERTEXBUFFER9 m_pVB;
+	LPDIRECT3DINDEXBUFFER9	m_pIB;
 
 public:
-	CShader_3dapi_01_13();
-	~CShader_3dapi_01_13();
+	CShader_3dapi_01_28();
+	~CShader_3dapi_01_28();
 
 	virtual HRESULT Create(LPDIRECT3DDEVICE9 pdev);
 	virtual void Release();

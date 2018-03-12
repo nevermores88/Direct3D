@@ -114,6 +114,7 @@
     <ClInclude Include="Ex12_Camera.h" />
     <ClInclude Include="Ex13_Terrain.h" />
     <ClInclude Include="Ex14_Particle.h" />
+    <ClInclude Include="Ex15_Picking.h" />
     <ClInclude Include="Ex17_Diffuse.h" />
     <ClInclude Include="Ex17_Toon.h" />
     <ClInclude Include="Ex17_ToonOutline.h" />
@@ -199,6 +200,7 @@
     <ClCompile Include="Ex12_Camera.cpp" />
     <ClCompile Include="Ex13_Terrain.cpp" />
     <ClCompile Include="Ex14_Particle.cpp" />
+    <ClCompile Include="Ex15_Picking.cpp" />
     <ClCompile Include="Ex17_Diffuse.cpp" />
     <ClCompile Include="Ex17_Toon.cpp" />
     <ClCompile Include="Ex17_ToonOutline.cpp" />

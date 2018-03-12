@@ -1,6 +1,7 @@
 #pragma once
 class CField
 {
+public:
 	struct Vertex
 	{
 		D3DXVECTOR3 p;
@@ -30,6 +31,7 @@ class CField
 		Index(WORD _0, WORD _1, WORD _2){ m[0] = _0, m[1] = _1, m[2] = _2; }
 	};
 
+private:
 	LPDIRECT3DDEVICE9 m_pdev;
 	Vertex* m_pVertex;
 	Index* m_pIndex;

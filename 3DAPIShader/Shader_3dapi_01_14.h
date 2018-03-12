@@ -1,12 +1,12 @@
 //---------------------------------------------------------------------------------------------------
 //
-//Description :  Lighting 02
-//Original File : s0v_07_2phong.zip
+//Description :  Lighting 03
+//Original File : s0v_07_3blinn.zip
 //
 //---------------------------------------------------------------------------------------------------
 
 #pragma once
-class CShader_3dapi_01_13 : public CBaseClass
+class CShader_3dapi_01_14 : public CBaseClass
 {
 	struct Vertex
 	{
@@ -32,8 +32,8 @@ class CShader_3dapi_01_13 : public CBaseClass
 	Vertex* m_pVertices;
 
 public:
-	CShader_3dapi_01_13();
-	~CShader_3dapi_01_13();
+	CShader_3dapi_01_14();
+	~CShader_3dapi_01_14();
 
 	virtual HRESULT Create(LPDIRECT3DDEVICE9 pdev);
 	virtual void Release();

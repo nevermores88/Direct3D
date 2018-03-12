@@ -21,6 +21,12 @@ namespace d3d
 		enum { FVF = (D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1) };
 	};
 
+	struct Ray
+	{
+		D3DXVECTOR3 origin;
+		D3DXVECTOR3 direction;
+	};
+
 	const float INFI = FLT_MAX;
 	const float EPSILON = 0.001f;
 

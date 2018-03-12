@@ -273,6 +273,9 @@
     <ClInclude Include="Shader_3dapi_28.h">
       <Filter>헤더 파일\Temp</Filter>
     </ClInclude>
+    <ClInclude Include="Ex15_Picking.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -514,6 +517,9 @@
     </ClCompile>
     <ClCompile Include="Shader_3dapi_28.cpp">
       <Filter>소스 파일\Temp</Filter>
+    </ClCompile>
+    <ClCompile Include="Ex15_Picking.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

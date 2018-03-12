@@ -1,17 +1,17 @@
 #include "stdafx.h"
-#include "Shader_3dapi_01_13.h"
+#include "Shader_3dapi_01_18.h"
 
 
-CShader_3dapi_01_13::CShader_3dapi_01_13()
+CShader_3dapi_01_18::CShader_3dapi_01_18()
 {
 }
 
 
-CShader_3dapi_01_13::~CShader_3dapi_01_13()
+CShader_3dapi_01_18::~CShader_3dapi_01_18()
 {
 }
 
-HRESULT CShader_3dapi_01_13::Create(LPDIRECT3DDEVICE9 pdev)
+HRESULT CShader_3dapi_01_18::Create(LPDIRECT3DDEVICE9 pdev)
 {
 	CBaseClass::Create(pdev);
 
@@ -31,7 +31,7 @@ HRESULT CShader_3dapi_01_13::Create(LPDIRECT3DDEVICE9 pdev)
 	LPD3DXBUFFER pShader = NULL;
 	LPD3DXBUFFER pError = NULL;
 
-	hr = D3DXAssembleShaderFromFile("Ex01_13/Shader.vsh", NULL, NULL, dwFlags, &pShader, &pError);
+	hr = D3DXAssembleShaderFromFile("Ex01_18/Shader.vsh", NULL, NULL, dwFlags, &pShader, &pError);
 
 	if (FAILED(hr))
 	{
@@ -60,6 +60,8 @@ HRESULT CShader_3dapi_01_13::Create(LPDIRECT3DDEVICE9 pdev)
 	D3DXDeclaratorFromFVF(Vertex::FVF, vertex_decl);
 	if (FAILED(m_pdev->CreateVertexDeclaration(vertex_decl, &m_pFVF)))
 		return E_FAIL;
+
+	D3DXCreateTextureFromFile(m_pdev, "Ex01_18/earth.bmp", &m_pTex);
 
 	INT	iSphereSegmentsNum = 128;
 	m_iVertexNum = 2 * iSphereSegmentsNum*(iSphereSegmentsNum + 1);
@@ -95,6 +97,8 @@ HRESULT CShader_3dapi_01_13::Create(LPDIRECT3DDEVICE9 pdev)
 			pVertices->n = pVertices->p;
 			D3DXVec3Normalize(&pVertices->n, &pVertices->n);
 
+			pVertices->u = -((FLOAT)seg) / iSphereSegmentsNum;
+			pVertices->v = (ring + 0) / (FLOAT)iSphereSegmentsNum;
 			pVertices++;
 
 			pVertices->p.x = x1;
@@ -104,6 +108,8 @@ HRESULT CShader_3dapi_01_13::Create(LPDIRECT3DDEVICE9 pdev)
 			pVertices->n = pVertices->p;
 			D3DXVec3Normalize(&pVertices->n, &pVertices->n);
 
+			pVertices->u = -((FLOAT)seg) / iSphereSegmentsNum;
+			pVertices->v = (ring + 1) / (FLOAT)iSphereSegmentsNum;
 			pVertices++;
 		}
 	}
@@ -111,7 +117,7 @@ HRESULT CShader_3dapi_01_13::Create(LPDIRECT3DDEVICE9 pdev)
 	return S_OK;
 }
 
-void CShader_3dapi_01_13::Release()
+void CShader_3dapi_01_18::Release()
 {
 	if (m_pVertexShader)
 	{
@@ -125,6 +131,12 @@ void CShader_3dapi_01_13::Release()
 		m_pFVF = NULL;
 	}
 
+	if (m_pTex)
+	{
+		m_pTex->Release();
+		m_pTex = NULL;
+	}
+
 	if (m_pVertices)
 	{
 		delete[] m_pVertices;
@@ -132,7 +144,7 @@ void CShader_3dapi_01_13::Release()
 	}
 }
 
-void CShader_3dapi_01_13::Render()
+void CShader_3dapi_01_18::Render()
 {
 	if (m_pdev)
 	{
@@ -140,7 +152,7 @@ void CShader_3dapi_01_13::Render()
 		D3DXMATRIX mtView;
 		D3DXMATRIX mtProj;
 
-		D3DXCOLOR color(1.0f, 0.6f, 1.0f, 0.0f);
+		D3DXCOLOR color(1.0f, 0.3f, 1.0f, 0.0f);
 		D3DXVECTOR4 vLight(-1.0f, -1.0f, 0.0f, 0.0f);
 		D3DXVECTOR4 vEyePow;
 
@@ -157,6 +169,11 @@ void CShader_3dapi_01_13::Render()
 		m_pdev->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
 		m_pdev->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
 		m_pdev->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
+
+		m_pdev->SetTextureStageState(0, D3DTSS_COLORARG0, D3DTA_SPECULAR);
+		m_pdev->SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
+		m_pdev->SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
+		m_pdev->SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MULTIPLYADD);
 
 		D3DXMATRIX mtViewInv;
 		D3DXMatrixInverse(&mtViewInv, NULL, &mtView);
@@ -178,15 +195,16 @@ void CShader_3dapi_01_13::Render()
 		m_pdev->SetVertexShaderConstantF(10, (FLOAT*)&color, 1);
 		m_pdev->SetVertexShaderConstantF(16, (FLOAT*)&vEyePow, 1);
 
-		m_pdev->SetTexture(0, NULL);
+		m_pdev->SetTexture(0, m_pTex);
 		m_pdev->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, m_iVertexNum - 2, m_pVertices, sizeof(Vertex));
 
 		m_pdev->SetVertexShader(NULL);
 		m_pdev->SetVertexDeclaration(NULL);
+		m_pdev->SetTexture(0, NULL);
 	}
 }
 
-void CShader_3dapi_01_13::Update()
+void CShader_3dapi_01_18::Update()
 {
 	if (m_pdev)
 	{

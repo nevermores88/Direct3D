@@ -1,12 +1,12 @@
 //---------------------------------------------------------------------------------------------------
 //
-//Description :  Lighting 02
-//Original File : s0v_07_2phong.zip
+//Description :  Toon Shading 01
+//Original File : s0v_10_toon1_texture_lighting.zip
 //
 //---------------------------------------------------------------------------------------------------
 
 #pragma once
-class CShader_3dapi_01_13 : public CBaseClass
+class CShader_3dapi_01_24 : public CBaseClass
 {
 	struct Vertex
 	{
@@ -26,14 +26,16 @@ class CShader_3dapi_01_13 : public CBaseClass
 	LPDIRECT3DVERTEXSHADER9	m_pVertexShader;
 	LPDIRECT3DVERTEXDECLARATION9	m_pFVF;
 
+	LPDIRECT3DTEXTURE9 m_pTex;
+
 	D3DXMATRIX m_mtWorld;
 
 	int m_iVertexNum;
 	Vertex* m_pVertices;
 
 public:
-	CShader_3dapi_01_13();
-	~CShader_3dapi_01_13();
+	CShader_3dapi_01_24();
+	~CShader_3dapi_01_24();
 
 	virtual HRESULT Create(LPDIRECT3DDEVICE9 pdev);
 	virtual void Release();

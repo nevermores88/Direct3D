@@ -25,6 +25,31 @@
 //Lighting
 #include "Shader_3dapi_01_12.h"
 #include "Shader_3dapi_01_13.h"
+#include "Shader_3dapi_01_14.h"
+#include "Shader_3dapi_01_15.h"
+#include "Shader_3dapi_01_16.h"
+#include "Shader_3dapi_01_17.h"
+#include "Shader_3dapi_01_18.h"
+
+//Vertex Blending
+#include "Shader_3dapi_01_19.h"
+#include "Shader_3dapi_01_20.h"
+
+//Fog
+//Âü°í : http://www.rastertek.com/dx10tut23.html
+//Fog Color = FogFactor * TextureColor + (1.0 - FogFactor) * FogColor
+#include "Shader_3dapi_01_21.h"
+#include "Shader_3dapi_01_22.h"
+#include "Shader_3dapi_01_23.h"
+
+//Toon Shading
+#include "Shader_3dapi_01_24.h"
+#include "Shader_3dapi_01_25.h"
+#include "Shader_3dapi_01_26.h"
+#include "Shader_3dapi_01_27.h"
+
+//Edge
+#include "Shader_3dapi_01_28.h"
 
 #include "Shader_3dapi_02_12.h"
 #include "Shader_3dapi_02_18.h"
@@ -110,7 +135,7 @@ HRESULT CGameApp::Create(HWND hWnd)
 	HRESULT ret = CGameCore::Create(hWnd);
 	SetCamera();
 
-	m_pGameInstance = new CShader_3dapi_01_11();
+	m_pGameInstance = new CShader_3dapi_01_28();
 
 	if (m_pGameInstance)
 		m_pGameInstance->Create(m_pdev);
